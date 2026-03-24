@@ -1,0 +1,29 @@
+div {
+    height: 220px; /* Un poquito más de aire para que luzca la bici */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    
+    /* El truco del texto: sombra fuerte y borde sutil */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); 
+    
+    /* Estética de tarjeta moderna */
+    border-radius: 12px;
+    margin: 10px;
+    transition: all 0.3s ease-in-out;
+    
+    /* Capa oscura suave para que la foto no "mate" al texto */
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 15px;
+}

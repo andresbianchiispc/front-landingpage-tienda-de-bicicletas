@@ -1,0 +1,12 @@
+<section class="home-wrapper">
+    <h2>Nuestras Categorías</h2>
+    
+    <div id="categorias-container">
+        @for (cat of categorias; track cat.id) {
+            <app-tarjeta-categoria 
+                [categoria]="cat" 
+                [routerLink]="['/categoria', cat.id]">
+            </app-tarjeta-categoria>
+        }
+    </div>
+</section>

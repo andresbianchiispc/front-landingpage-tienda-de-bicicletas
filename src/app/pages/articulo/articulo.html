@@ -1,0 +1,33 @@
+@if (producto) {
+<div class="articulo-container">
+  <div class="col-izq">
+    <img [src]="producto.fotoUrl" [alt]="producto.nombre">
+  </div>
+
+  <div class="col-der">
+    <span class="badge-disponible">Stock Disponible</span>
+    <h1>{{ producto.nombre }}</h1>
+    <span class="precio-grande">${{ producto.precio | number:'1.0-0' }}</span>
+    
+    <div class="specs-box" [class.expandido]="mostrarSpecs">
+      <h3>Ficha Técnica</h3>
+      <div class="specs-content-wrapper">
+        <ul>
+          @for (s of producto.especificaciones; track s) {
+            <li><strong>•</strong> {{ s }}</li>
+          }
+        </ul>
+        <div class="fade-overlay" (click)="mostrarSpecs = true"></div>
+      </div>
+    </div>
+
+    <div class="acciones">
+      <button class="btn-comprar">Finalizar Compra</button>
+      <a href="https://wa.me/5493510000000?text=Hola! Me interesa la bici {{producto.nombre}}" 
+         target="_blank" class="btn-whatsapp">
+         Consultar por WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+}

@@ -1,0 +1,245 @@
+/* --- Estructura Global --- */
+.articulo-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna por defecto (Mobile) */
+    gap: 15px; /* Menos espacio entre foto y texto */
+    padding: 10px 10px; /* Padding ultra reducido */
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 0.4s ease-in;
+}
+
+/* --- Breakpoint para Desktop (> 850px) --- */
+@media (min-width: 850px) {
+    .articulo-container {
+        grid-template-columns: 1.2fr 0.8fr; /* Dos columnas en PC */
+        gap: 50px; /* Más aire en PC */
+        padding: 40px 20px;
+    }
+}
+
+/* --- Columna Izquierda (Imagen) --- */
+.col-izq img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* BREAKPOINT AGRESIVO PARA CELULAR ( < 600px ) */
+/* Aquí hacemos la foto muuuucho más chica */
+@media (max-width: 600px) {
+    .col-izq {
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Centrar la imagen pequeña */
+        margin-bottom: 10px;
+    }
+    
+    .col-izq img {
+        width: 150px; /* <--- Ancho fijo muy pequeño */
+        height: 150px; /* <--- Alto fijo para hacerla cuadrada */
+        object-fit: cover; /* Asegura que la bici se vea bien si se recorta */
+        border-radius: 50%; /* <--- Opción: Circular para look de avatar */
+        /* O si la prefieres cuadrada redondeada: border-radius: 15px; */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        margin-top: 5px;
+    }
+}
+
+/* --- Columna Derecha (Info) --- */
+.col-der {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Badge Disponible */
+.badge-disponible {
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 3px 10px; /* Más compacto */
+    border-radius: 50px;
+    font-size: 0.7rem; /* Más chico */
+    font-weight: 700;
+    text-transform: uppercase;
+    width: fit-content;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 600px) {
+    .badge-disponible { margin: 0 auto 10px auto; } /* Centrado en cel */
+}
+
+/* Título (h1) */
+.col-der h1 {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1.8rem; /* Tablet/Mobile grande */
+    line-height: 1.1;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+}
+
+@media (min-width: 850px) {
+    .col-der h1 { font-size: 2.8rem; }
+}
+
+/* Título mucho más CHICO en CELULAR (< 600px) */
+@media (max-width: 600px) {
+    .col-der h1 { 
+        font-size: 1.3rem; /* <--- Título muy contenido */
+        text-align: center; 
+        margin-bottom: 5px;
+    }
+}
+
+/* Precio Grande */
+.precio-grande {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #27ae60;
+    margin-bottom: 20px;
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .precio-grande { 
+        font-size: 1.5rem; /* <--- Precio más chico */
+        text-align: center; 
+        margin-bottom: 12px;
+    }
+}
+
+/* Ficha Técnica / Specs */
+.specs-box {
+    background: #f8f9fa;
+    border-left: 4px solid #ffcc00;
+    padding: 12px; /* Más compacto */
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    .specs-box { margin-bottom: 15px; } /* Menos margen en cel */
+}
+
+.specs-box h3 {
+    font-size: 0.9rem; /* Más chico */
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.specs-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.specs-box ul li {
+    font-size: 0.9rem; /* Más chico */
+    margin-bottom: 6px;
+    color: #333;
+}
+
+/* Botones de Acción Ultra Densos */
+.acciones {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Menos espacio entre botones */
+}
+
+.btn-comprar {
+    background: #000;
+    color: #fff;
+    padding: 14px; /* <--- Padding reducido */
+    border-radius: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: none;
+    font-size: 0.9rem; /* <--- Fuente más chica */
+    cursor: pointer;
+}
+
+.btn-whatsapp {
+    background: #25d366;
+    color: #fff;
+    padding: 12px; /* <--- Padding reducido */
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem; /* <--- Fuente más chica */
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* --- Caja de Specs Compacta --- */
+.specs-box {
+    background: #f8f9fa;
+    border-left: 4px solid #ffcc00;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.specs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.specs-header h3 {
+    font-size: 0.9rem;
+    margin: 0;
+    color: #666;
+}
+
+.flecha {
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+    color: #999;
+}
+
+.flecha.rotar {
+    transform: rotate(180deg);
+}
+
+/* --- Control de visibilidad --- */
+.specs-content {
+    max-height: 0; /* Oculto por defecto */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin-top 0.3s;
+}
+
+.specs-content.expandido {
+    max-height: 500px; /* Un valor lo suficientemente grande */
+    margin-top: 10px;
+}
+
+.specs-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.specs-content li {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+
+/* En Desktop, si querés que siempre se vea, podés forzarlo */
+@media (min-width: 850px) {
+    .specs-content {
+        max-height: none;
+    }
+}

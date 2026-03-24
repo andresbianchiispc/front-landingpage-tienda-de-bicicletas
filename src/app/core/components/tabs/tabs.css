@@ -1,0 +1,56 @@
+#container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #ffffff;
+    height: 65px;
+    border-top: 1px solid #eaeaea;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 25px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+/* --- COLOR POR DEFECTO (GRIS) --- */
+/* Forzamos a todos los elementos dibujables del SVG */
+.tab svg path, 
+.tab svg polygon, 
+.tab svg rect, 
+.tab svg circle {
+    fill: #888888 !important; /* El gris que querías */
+    transition: fill 0.2s ease;
+}
+
+/* --- COLOR SELECCIONADO (AZUL) --- */
+.tab.seleccionado svg path, 
+.tab.seleccionado svg polygon, 
+.tab.seleccionado svg rect, 
+.tab.seleccionado svg circle {
+    fill: #007bff !important; /* El azul web */
+}
+
+/* Barra azul superior */
+.tab.seleccionado::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #007bff;
+}
+
+/* Hover sutil */
+.tab:hover svg path {
+    fill: #333 !important;
+}
+

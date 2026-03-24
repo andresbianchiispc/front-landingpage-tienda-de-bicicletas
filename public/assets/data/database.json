@@ -1,0 +1,105 @@
+[
+  {
+    "id": 1,
+    "nombre": "Bicicletas de Montaña",
+    "fotoUrl": "https://images.unsplash.com/photo-1511994298241-608e28f14fde?q=80&w=1000&auto=format&fit=crop",
+    "productos": [
+      { "id": "101", "nombre": "MTB R29 Hardtail", "precio": 150000, "especificaciones": ["Cuadro Aluminio 6061","21 Velocidades Shimano","Frenos de Disco","120ml","18 velocidades","Frenos de Disco","120ml","18 velocidades"], "fotoUrl": "https://picsum.photos/seed/mtb1/400" },
+      { "id": "102", "nombre": "MTB Full Carbono Pro", "precio": 450000, "especificaciones": ["Cuadro Carbono","SRAM 1x12","Suspensión Aire"], "fotoUrl": "https://picsum.photos/seed/mtb2/400" },
+      { "id": "103", "nombre": "MTB Trail X-Enduro", "precio": 380000, "especificaciones": ["Doble Suspensión","Cubiertas Maxxis","Dropper"], "fotoUrl": "https://picsum.photos/seed/mtb3/400" },
+      { "id": "104", "nombre": "MTB Pro XC Race", "precio": 290000, "especificaciones": ["Geometría XC","Shimano Deore","Horquilla 100mm"], "fotoUrl": "https://picsum.photos/seed/mtb4/400" },
+      { "id": "105", "nombre": "MTB All Mountain", "precio": 410000, "especificaciones": ["Suspensión 140mm","Frenos hidráulicos","Ruedas 29"], "fotoUrl": "https://picsum.photos/seed/mtb5/400" },
+      { "id": "106", "nombre": "MTB Beginner 27.5", "precio": 120000, "especificaciones": ["Rodado 27.5","18 velocidades","Frenos V-Brake"], "fotoUrl": "https://picsum.photos/seed/mtb6/400" },
+      { "id": "107", "nombre": "MTB Pro Trail Carbon", "precio": 500000, "especificaciones": ["Carbono","SRAM GX","Tubeless"], "fotoUrl": "https://picsum.photos/seed/mtb7/400" },
+      { "id": "108", "nombre": "MTB Enduro Elite", "precio": 600000, "especificaciones": ["160mm","RockShox","Dropper"], "fotoUrl": "https://picsum.photos/seed/mtb8/400" },
+      { "id": "109", "nombre": "MTB Urban Trail", "precio": 180000, "especificaciones": ["Uso mixto","Shimano Altus","Disco mecánico"], "fotoUrl": "https://picsum.photos/seed/mtb9/400" },
+      { "id": "110", "nombre": "MTB Kids 24", "precio": 90000, "especificaciones": ["Rodado 24","7 velocidades","Frenos V"], "fotoUrl": "https://picsum.photos/seed/mtb10/400" }
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Bicicletas de Ruta & Gravel",
+    "fotoUrl": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=1000&auto=format&fit=crop",
+    "productos": [
+      { "id": "201", "nombre": "Ruta Competition Carbon", "precio": 320000, "especificaciones": ["Carbono","Shimano 105","Perfil 38mm"], "fotoUrl": "https://picsum.photos/seed/ruta1/400" },
+      { "id": "202", "nombre": "Gravel Adventure Plus", "precio": 210000, "especificaciones": ["Aluminio","Horquilla carbono","Disco"], "fotoUrl": "https://picsum.photos/seed/ruta2/400" },
+      { "id": "203", "nombre": "Ruta Endurance Light", "precio": 275000, "especificaciones": ["Confort","Tiagra","700x28"], "fotoUrl": "https://picsum.photos/seed/ruta3/400" },
+      { "id": "204", "nombre": "Ruta Aero Pro", "precio": 390000, "especificaciones": ["Aero","Ultegra","Carbono"], "fotoUrl": "https://picsum.photos/seed/ruta4/400" },
+      { "id": "205", "nombre": "Gravel Touring", "precio": 230000, "especificaciones": ["Portaequipaje","Disco","Cubiertas 40c"], "fotoUrl": "https://picsum.photos/seed/ruta5/400" },
+      { "id": "206", "nombre": "Ruta Clásica", "precio": 180000, "especificaciones": ["Acero","Shimano Claris","Frenos caliper"], "fotoUrl": "https://picsum.photos/seed/ruta6/400" },
+      { "id": "207", "nombre": "Gravel Carbon Elite", "precio": 420000, "especificaciones": ["Carbono","SRAM","Tubeless"], "fotoUrl": "https://picsum.photos/seed/ruta7/400" },
+      { "id": "208", "nombre": "Ruta Speed Race", "precio": 350000, "especificaciones": ["Ligera","Ultegra","Perfil alto"], "fotoUrl": "https://picsum.photos/seed/ruta8/400" },
+      { "id": "209", "nombre": "Gravel Explorer", "precio": 200000, "especificaciones": ["Mixta","Shimano","Disco"], "fotoUrl": "https://picsum.photos/seed/ruta9/400" },
+      { "id": "210", "nombre": "Ruta Fitness", "precio": 160000, "especificaciones": ["Plano","Shimano","Uso urbano"], "fotoUrl": "https://picsum.photos/seed/ruta10/400" }
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "E-Bikes (Eléctricas)",
+    "fotoUrl": "https://picsum.photos/seed/ebike/800",
+    "productos": [
+      { "id": "301", "nombre": "E-MTB Power Drive", "precio": 850000, "especificaciones": ["250W","500Wh","80km"], "fotoUrl": "https://picsum.photos/seed/e1/400" },
+      { "id": "302", "nombre": "E-City Urban Eco", "precio": 520000, "especificaciones": ["Plegable","5 niveles","Batería litio"], "fotoUrl": "https://picsum.photos/seed/e2/400" },
+      { "id": "303", "nombre": "E-Road Speed", "precio": 780000, "especificaciones": ["Carbono","Ligera","Autonomía 100km"], "fotoUrl": "https://picsum.photos/seed/e3/400" },
+      { "id": "304", "nombre": "E-Gravel Hybrid", "precio": 690000, "especificaciones": ["Mixta","Disco","Motor central"], "fotoUrl": "https://picsum.photos/seed/e4/400" },
+      { "id": "305", "nombre": "E-Cargo Utility", "precio": 920000, "especificaciones": ["Carga","Batería grande","Estable"], "fotoUrl": "https://picsum.photos/seed/e5/400" },
+      { "id": "306", "nombre": "E-Folding Compact", "precio": 480000, "especificaciones": ["Plegable","Liviana","Ciudad"], "fotoUrl": "https://picsum.photos/seed/e6/400" },
+      { "id": "307", "nombre": "E-Trekking Pro", "precio": 700000, "especificaciones": ["Viajes largos","Confort","Autonomía"], "fotoUrl": "https://picsum.photos/seed/e7/400" },
+      { "id": "308", "nombre": "E-Kids Safe", "precio": 350000, "especificaciones": ["Limitador","Liviana","Segura"], "fotoUrl": "https://picsum.photos/seed/e8/400" },
+      { "id": "309", "nombre": "E-MTB Enduro", "precio": 950000, "especificaciones": ["Potente","Suspensión","Pro"], "fotoUrl": "https://picsum.photos/seed/e9/400" },
+      { "id": "310", "nombre": "E-City Deluxe", "precio": 600000, "especificaciones": ["Premium","Cómoda","Silenciosa"], "fotoUrl": "https://picsum.photos/seed/e10/400" }
+    ]
+  },
+
+  {
+    "id": 4,
+    "nombre": "Bicicletas Urbanas",
+    "fotoUrl": "https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=1000&auto=format&fit=crop",
+    "productos": [
+      { "id": "401", "nombre": "Urbana Vintage Lady", "precio": 95000, "especificaciones": ["Canasto","7 velocidades","Asiento confort"], "fotoUrl": "https://picsum.photos/seed/u1/400" },
+      { "id": "402", "nombre": "Fixie Track Black", "precio": 110000, "especificaciones": ["Piñón fijo","Acero","Minimalista"], "fotoUrl": "https://picsum.photos/seed/u2/400" },
+      { "id": "403", "nombre": "City Comfort Plus", "precio": 130000, "especificaciones": ["Ergonómica","Shimano","Liviana"], "fotoUrl": "https://picsum.photos/seed/u3/400" },
+      { "id": "404", "nombre": "Urban Classic Man", "precio": 120000, "especificaciones": ["Clásica","Acero","Durable"], "fotoUrl": "https://picsum.photos/seed/u4/400" },
+      { "id": "405", "nombre": "City Folding Bike", "precio": 150000, "especificaciones": ["Plegable","Compacta","Transporte fácil"], "fotoUrl": "https://picsum.photos/seed/u5/400" },
+      { "id": "406", "nombre": "Urban Sport", "precio": 140000, "especificaciones": ["Deportiva","21 vel","Disco"], "fotoUrl": "https://picsum.photos/seed/u6/400" },
+      { "id": "407", "nombre": "Beach Cruiser", "precio": 135000, "especificaciones": ["Ancha","Cómoda","Relax"], "fotoUrl": "https://picsum.photos/seed/u7/400" },
+      { "id": "408", "nombre": "Urban Eco Ride", "precio": 100000, "especificaciones": ["Simple","Ecológica","Ligera"], "fotoUrl": "https://picsum.photos/seed/u8/400" },
+      { "id": "409", "nombre": "City Premium", "precio": 170000, "especificaciones": ["Alta gama","Disco","Confort"], "fotoUrl": "https://picsum.photos/seed/u9/400" },
+      { "id": "410", "nombre": "Urban Student", "precio": 85000, "especificaciones": ["Económica","Práctica","Resistente"], "fotoUrl": "https://picsum.photos/seed/u10/400" }
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "Accesorios & Seguridad",
+    "fotoUrl": "https://picsum.photos/seed/acc/800",
+    "productos": [
+      { "id": "501", "nombre": "Casco Pro-Ride MIPS", "precio": 18000, "especificaciones": ["Protección","LED","Ventilación"], "fotoUrl": "https://picsum.photos/seed/a1/400" },
+      { "id": "502", "nombre": "Candado U-Lock Blindado", "precio": 12000, "especificaciones": ["Acero","Alta seguridad","Soporte"], "fotoUrl": "https://picsum.photos/seed/a2/400" },
+      { "id": "503", "nombre": "Inflador de Pie Pro", "precio": 9500, "especificaciones": ["Manómetro","Preciso","Acero"], "fotoUrl": "https://picsum.photos/seed/a3/400" },
+      { "id": "504", "nombre": "Luces LED Recargables", "precio": 7000, "especificaciones": ["USB","Alta visibilidad","Compacto"], "fotoUrl": "https://picsum.photos/seed/a4/400" },
+      { "id": "505", "nombre": "Guantes Gel Comfort", "precio": 6000, "especificaciones": ["Antideslizante","Respirable","Ergonómico"], "fotoUrl": "https://picsum.photos/seed/a5/400" },
+      { "id": "506", "nombre": "Gafas Ciclismo UV", "precio": 8000, "especificaciones": ["Protección UV","Livianas","Antiviento"], "fotoUrl": "https://picsum.photos/seed/a6/400" },
+      { "id": "507", "nombre": "Porta Botella Aluminio", "precio": 3500, "especificaciones": ["Ligero","Resistente","Universal"], "fotoUrl": "https://picsum.photos/seed/a7/400" },
+      { "id": "508", "nombre": "Mochila Hidratación", "precio": 14000, "especificaciones": ["2L","Ergonómica","Trail"], "fotoUrl": "https://picsum.photos/seed/a8/400" },
+      { "id": "509", "nombre": "Soporte Celular", "precio": 5000, "especificaciones": ["Universal","Rotación","Firme"], "fotoUrl": "https://picsum.photos/seed/a9/400" },
+      { "id": "510", "nombre": "Espejo Retrovisor", "precio": 4000, "especificaciones": ["Ajustable","Seguro","Compacto"], "fotoUrl": "https://picsum.photos/seed/a10/400" }
+    ]
+  },
+  {
+    "id": 6,
+    "nombre": "Mantenimiento & Herramientas",
+    "fotoUrl": "https://picsum.photos/seed/tools/800",
+    "productos": [
+      { "id": "601", "nombre": "Multiherramienta 15 en 1", "precio": 7500, "especificaciones": ["Allen","Torx","Corta cadena"], "fotoUrl": "https://picsum.photos/seed/t1/400" },
+      { "id": "602", "nombre": "Lubricante de Cadena", "precio": 4500, "especificaciones": ["Teflón","Reduce fricción","120ml"], "fotoUrl": "https://picsum.photos/seed/t2/400" },
+      { "id": "603", "nombre": "Kit Reparación Pinchaduras", "precio": 3000, "especificaciones": ["Parche","Pegamento","Compacto"], "fotoUrl": "https://picsum.photos/seed/t3/400" },
+      { "id": "604", "nombre": "Llave Extractora Cassette", "precio": 5500, "especificaciones": ["Acero","Precisa","Durable"], "fotoUrl": "https://picsum.photos/seed/t4/400" },
+      { "id": "605", "nombre": "Cepillo Limpieza Bike", "precio": 3500, "especificaciones": ["Multiuso","Resistente","Ergonómico"], "fotoUrl": "https://picsum.photos/seed/t5/400" },
+      { "id": "606", "nombre": "Soporte Taller Ajustable", "precio": 25000, "especificaciones": ["Plegable","Altura regulable","Firme"], "fotoUrl": "https://picsum.photos/seed/t6/400" },
+      { "id": "607", "nombre": "Medidor Desgaste Cadena", "precio": 4000, "especificaciones": ["Preciso","Fácil uso","Compacto"], "fotoUrl": "https://picsum.photos/seed/t7/400" },
+      { "id": "608", "nombre": "Llave Allen Profesional", "precio": 6000, "especificaciones": ["Juego completo","Acero","Durable"], "fotoUrl": "https://picsum.photos/seed/t8/400" },
+      { "id": "609", "nombre": "Desmontables Cubiertas", "precio": 2500, "especificaciones": ["Plástico","Resistente","Pack x3"], "fotoUrl": "https://picsum.photos/seed/t9/400" },
+      { "id": "610", "nombre": "Kit Limpieza Premium", "precio": 12000, "especificaciones": ["Completo","Cepillos","Desengrasante"], "fotoUrl": "https://picsum.photos/seed/t10/400" }
+    ]
+  }
+]

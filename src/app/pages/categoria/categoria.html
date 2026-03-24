@@ -1,0 +1,28 @@
+<div class="container-fluido">
+    <div class="productos-container">
+        @for (prod of productos; track prod.id) {
+        <div class="producto-card">
+            <div class="img-wrapper">
+                <img [src]="prod.fotoUrl" class="producto-img" [alt]="prod.nombre">
+            </div>
+
+            <div class="info-body">
+                <div class="info-content">
+                    <h4>{{ prod.nombre }}</h4>
+                    <p class="precio">${{ prod.precio | number:'1.0-0' }}</p>
+                    <ul>
+                        @for (item of prod.especificaciones; track item) {
+                        <li>{{ item }}</li>
+                        }
+                    </ul>
+                </div>
+                <div class="fade-overlay-card"></div>
+            </div>
+
+            <button class="btn-comprar" [routerLink]="['/articulo', prod.id]">
+                Ver Detalle
+            </button>
+        </div>
+        }
+    </div>
+</div>
