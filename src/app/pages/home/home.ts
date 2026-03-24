@@ -20,7 +20,7 @@ export class Home implements OnInit {
   categorias: Categoria[] = [];
 
   async ngOnInit() {
-    this.headerService.titulo.set('Tienda de Bicicletas - Home');
+    this.headerService.titulo.set('');
 
     // 1. Obtenemos la respuesta del servicio
     const res: any = await this.categoriasService.getAll();

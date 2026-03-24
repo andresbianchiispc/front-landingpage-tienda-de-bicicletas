@@ -13,7 +13,7 @@
       <h3>Ficha Técnica</h3>
       <div class="specs-content-wrapper">
         <ul>
-          @for (s of producto.especificaciones; track s) {
+          @for (s of producto.especificaciones; track $index) {
             <li><strong>•</strong> {{ s }}</li>
           }
         </ul>

@@ -26,16 +26,70 @@ header {
 
 .logo span { color: #ffcc00; }
 
+
+
 nav { display: none; } /* Oculto en cel */
 
+h1 {
+  /* Estilos para móviles (por defecto) */
+  font-size: 0.75rem; /* Más pequeño para que entre bien entre logo y carrito */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 10px; /* Margen lateral para que no pegue a los lados */
+  flex-grow: 1;
+  text-align: center;
+  color: #ffcc00; /* Color que combine con tu estética Velocity */
+  
+  /* Evita que el texto largo rompa el header */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+/* Ajustes para tablets y computadoras */
 @media (min-width: 768px) {
-  nav { display: flex; gap: 25px; }
-  nav a { 
-    color: white; 
-    text-decoration: none; 
-    font-weight: 600; 
-    text-transform: uppercase;
-    font-size: 0.85rem;
+  h1 {
+    font-size: 1.1rem; /* Tamaño más cómodo para pantallas grandes */
+    letter-spacing: 1.5px;
+    margin: 0;
   }
-  .logo { font-size: 1.7rem; }
+}
+
+/* Opcional: Si el logo es muy grande en móviles, podemos darle un ancho fijo al h1 
+   para asegurar que siempre esté centrado */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.1rem; /* Achicamos un pelín el logo solo en celus muy chicos */
+  }
+}
+.cart-icon {
+  /* ESTO ES LO QUE BUSCAS: Cambia el cursor a mano */
+  cursor: pointer; 
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px; /* Un poco de espacio para que sea fácil de clickear */
+  transition: all 0.2s ease-in-out;
+  
+  /* Evita que el usuario seleccione el icono por accidente */
+  user-select: none; 
+}
+
+.cart-icon svg {
+  fill: #ffcc00; /* El color amarillo característico */
+  width: 32px;
+  height: 32px;
+}
+
+/* Efecto visual al pasar el mouse */
+.cart-icon:hover {
+  transform: scale(1.1); /* Se agranda sutilmente */
+  filter: drop-shadow(0 0 5px rgba(255, 204, 0, 0.4)); /* Brillo suave */
+}
+
+/* Efecto visual al hacer click */
+.cart-icon:active {
+  transform: scale(0.95); /* Feedback táctico de presión */
 }

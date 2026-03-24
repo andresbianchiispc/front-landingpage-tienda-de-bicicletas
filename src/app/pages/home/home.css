@@ -28,8 +28,6 @@ h2::after {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto; /* Centra todo el bloque */
-    /* Animación de entrada suave */
-    animation: fadeInUp 0.6s ease-out;
 }
 
 /* Animación para que las categorías "aparezcan" al cargar */

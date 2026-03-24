@@ -11,7 +11,7 @@
                     <h4>{{ prod.nombre }}</h4>
                     <p class="precio">${{ prod.precio | number:'1.0-0' }}</p>
                     <ul>
-                        @for (item of prod.especificaciones; track item) {
+                        @for (item of prod.especificaciones; track $index) {
                         <li>{{ item }}</li>
                         }
                     </ul>

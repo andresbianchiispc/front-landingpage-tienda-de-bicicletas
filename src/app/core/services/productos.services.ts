@@ -6,32 +6,27 @@ import { Producto } from '../interfaces/productos';
   providedIn: 'root',
 })
 export class ProductosServices {
+  private readonly JSON_URL = '/assets/data/database.json';
+
+  // 1. Obtener productos de una categoría específica
   async getByCategoria(id: number): Promise<Producto[]> {
-    // Usamos la ruta absoluta que es más segura
-    const res = await fetch('/assets/data/database.json');
-    const resJson: Categoria[] = await res.json();
+    const res = await fetch(this.JSON_URL);
+    const data = await res.json();
+    const categorias: Categoria[] = data.categorias || data;
 
-    // Buscamos la categoría por ID
-    const categoriaEncontrada = resJson.find((cat) => cat.id === id);
-
-    // Ahora 'productos' sí existe en el tipo 'Categoria'
+    const categoriaEncontrada = categorias.find((cat) => cat.id === id);
     return categoriaEncontrada ? categoriaEncontrada.productos : [];
   }
 
-  // productos.services.ts
-
+  // 2. Obtener un producto por ID (buscando en todas las categorías)
   async getById(id: number): Promise<Producto | undefined> {
     try {
-      const res = await fetch('./assets/data/database.json');
+      const res = await fetch(this.JSON_URL);
       const data = await res.json();
-
-      // Si el JSON tiene la raíz "categorias", la usamos; si no, usamos data directamente
       const categorias = data.categorias || data;
 
-      // Buscamos el producto en todas las categorías
       for (const cat of categorias) {
         if (cat.productos) {
-          // USAMOS Number(p.id) para que la comparación sea siempre entre números
           const encontrado = cat.productos.find((p: any) => Number(p.id) === id);
           if (encontrado) return encontrado;
         }
@@ -40,6 +35,42 @@ export class ProductosServices {
     } catch (e) {
       console.error('Error al cargar el producto', e);
       return undefined;
+    }
+  }
+
+  // 3. Obtener el nombre de una categoría por su ID
+  async getNombreById(id: number): Promise<string | null> {
+    try {
+      const res = await fetch(this.JSON_URL);
+      const data = await res.json();
+      const categorias: Categoria[] = data.categorias || data;
+
+      const categoriaEncontrada = categorias.find((cat) => cat.id === id);
+      return categoriaEncontrada ? categoriaEncontrada.nombre : null;
+    } catch (e) {
+      console.error('Error al obtener el nombre de la categoría', e);
+      return null;
+    }
+  }
+
+  // 4. Obtener Producto + Nombre de Categoría (Optimizado para el Header del detalle)
+  async getProductoConCategoria(
+    id: number,
+  ): Promise<{ producto: Producto; categoria: string } | null> {
+    try {
+      const res = await fetch(this.JSON_URL);
+      const data = await res.json();
+      const categorias: any[] = data.categorias || data;
+
+      for (const cat of categorias) {
+        const encontrado = cat.productos.find((p: any) => Number(p.id) === id);
+        if (encontrado) {
+          return { producto: encontrado, categoria: cat.nombre };
+        }
+      }
+      return null;
+    } catch (e) {
+      return null;
     }
   }
 }

@@ -17,4 +17,18 @@ export class CategoriasServices {
       return [];
     }
   }
+
+  //obtener el nombre de la categoria por su id
+  async getNombreById(id: number) {
+    try {
+      const data: any = await firstValueFrom(this.http.get('./assets/data/database.json'));
+      const categoria = data.categorias.find((cat: any) => cat.id === id);
+      return categoria ? categoria.nombre : null;
+    } catch (error) {
+      console.error('Error al cargar la categoría por ID:', error);
+      return null;
+    }
+  }
+
+
 }
