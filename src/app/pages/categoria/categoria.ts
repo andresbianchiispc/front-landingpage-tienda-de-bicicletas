@@ -4,7 +4,7 @@ import { ProductosServices } from '../../core/services/productos.services';
 import { Producto } from '../../core/interfaces/productos';
 import { CommonModule } from '@angular/common';
 import { ViewEncapsulation } from '@angular/core';
-import { HeaderService } from '../../services/header.service';
+import { HeaderService } from '../../core/services/header.service';
 import { trigger, transition, style, animate, query, stagger } from '@angular/animations';
 
 @Component({

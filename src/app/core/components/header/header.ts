@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { HeaderService } from '../../../services/header.service';
+import { HeaderService } from '../../services/header.service';
 import { RouterLink } from "@angular/router";
 
 @Component({

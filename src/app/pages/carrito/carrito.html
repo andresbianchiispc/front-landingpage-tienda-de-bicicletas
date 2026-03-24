@@ -1,1 +1,127 @@
-<p>carrito works!</p>
+<div class="carrito-wrapper">
+
+  @if (items.length === 0) {
+    <div class="carrito-vacio">
+      <span class="icono-vacio">🛒</span>
+      <h2>Tu carrito está vacío</h2>
+      <p>Explorá nuestras categorías y agregá productos</p>
+      <button class="btn-ir-inicio" routerLink="/">Ver productos</button>
+    </div>
+  }
+
+  @if (items.length > 0) {
+    <div class="lista-items">
+      @for (item of items; track item.producto.id) {
+        <div class="item-card">
+          <img [src]="item.producto.fotoUrl" [alt]="item.producto.nombre" />
+          <div class="item-info">
+            <h4>{{ item.producto.nombre }}</h4>
+            <span class="item-precio">${{ item.producto.precio | number:'1.0-0' }}</span>
+          </div>
+          <div class="item-controles">
+            <button class="btn-ctrl" (click)="restar(item)">−</button>
+            <span class="cantidad">{{ item.cantidad }}</span>
+            <button class="btn-ctrl" (click)="sumar(item)">+</button>
+          </div>
+          <button class="btn-eliminar" (click)="eliminar(item)" title="Eliminar">✕</button>
+        </div>
+      }
+    </div>
+
+    <div class="resumen">
+      <div class="resumen-fila">
+        <span>Productos ({{ cantidad }})</span>
+        <span>${{ total | number:'1.0-0' }}</span>
+      </div>
+      <div class="resumen-fila envio">
+        <span>Envío</span>
+        <span class="gratis">Gratis 🎉</span>
+      </div>
+      <div class="resumen-fila total">
+        <strong>Total</strong>
+        <strong>${{ total | number:'1.0-0' }}</strong>
+      </div>
+
+      <button class="btn-comprar" (click)="abrirFormulario()">Finalizar compra</button>
+      <button class="btn-vaciar" (click)="vaciar()">Vaciar carrito</button>
+    </div>
+  }
+
+</div>
+
+<!-- ===== MODAL CON FORMULARIO ===== -->
+@if (mostrarFormulario) {
+  <div class="overlay" (click)="cerrarFormulario()"></div>
+
+  <div class="modal">
+    <div class="modal-header">
+      <h3>Completá tu pedido</h3>
+      <button class="btn-cerrar" (click)="cerrarFormulario()">✕</button>
+    </div>
+
+    <div class="modal-body">
+
+      <div class="form-grupo">
+        <label>Nombre completo *</label>
+        <input
+          type="text"
+          [(ngModel)]="nombre"
+          placeholder="Ej: Juan Pérez"
+          [class.error]="errores.nombre"
+        />
+        @if (errores.nombre) { <span class="msg-error">{{ errores.nombre }}</span> }
+      </div>
+
+      <div class="form-grupo">
+        <label>Teléfono *</label>
+        <input
+          type="tel"
+          [(ngModel)]="telefono"
+          placeholder="Ej: 351 456-7890"
+          [class.error]="errores.telefono"
+        />
+        @if (errores.telefono) { <span class="msg-error">{{ errores.telefono }}</span> }
+      </div>
+
+      <div class="form-grupo">
+        <label>Dirección de entrega *</label>
+        <input
+          type="text"
+          [(ngModel)]="direccion"
+          placeholder="Ej: Av. Colón 1234, Córdoba"
+          [class.error]="errores.direccion"
+        />
+        @if (errores.direccion) { <span class="msg-error">{{ errores.direccion }}</span> }
+      </div>
+
+      <div class="form-grupo">
+        <label>Notas adicionales (opcional)</label>
+        <textarea
+          [(ngModel)]="notas"
+          placeholder="Horario de entrega, color preferido, etc."
+          rows="3"
+        ></textarea>
+      </div>
+
+      <!-- Resumen del pedido -->
+      <div class="resumen-modal">
+        <p class="resumen-titulo">Resumen del pedido</p>
+        @for (item of items; track item.producto.id) {
+          <div class="resumen-item">
+            <span>{{ item.producto.nombre }} x{{ item.cantidad }}</span>
+            <span>${{ (item.producto.precio * item.cantidad) | number:'1.0-0' }}</span>
+          </div>
+        }
+        <div class="resumen-item total-modal">
+          <strong>Total</strong>
+          <strong>${{ total | number:'1.0-0' }}</strong>
+        </div>
+      </div>
+
+      <button class="btn-enviar" (click)="enviarPedido()">
+        💬 Enviar pedido por WhatsApp
+      </button>
+      <p class="aclaracion">Te vamos a contactar para confirmar el pedido</p>
+    </div>
+  </div>
+}

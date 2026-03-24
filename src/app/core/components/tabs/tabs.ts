@@ -12,21 +12,19 @@ export class Tabs {
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        switch (event.url) {
-          case 'categoria':
-            this.seleccionado = [true, false, false, false];
-            break;
-          case '/buscar':
-            this.seleccionado = [false, true, false, false];
-            break;
-          case '/carrito':
-            this.seleccionado = [false, false, true, false];
-            break;
-          case '/perfil':
-            this.seleccionado = [false, false, false, true];
-            break;
-          default:
-            this.seleccionado = [false, false, false, false];
+        const url = event.url;
+        if (url === '/' || url === '') {
+          this.seleccionado = [false, false, false, false];
+        } else if (url.startsWith('/categoria') || url.startsWith('/articulo')) {
+          this.seleccionado = [true, false, false, false];
+        } else if (url === '/buscar') {
+          this.seleccionado = [false, true, false, false];
+        } else if (url === '/carrito') {
+          this.seleccionado = [false, false, true, false];
+        } else if (url === '/perfil') {
+          this.seleccionado = [false, false, false, true];
+        } else {
+          this.seleccionado = [false, false, false, false];
         }
       }
     });

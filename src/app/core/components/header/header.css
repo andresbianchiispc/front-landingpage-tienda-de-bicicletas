@@ -64,17 +64,14 @@ h1 {
   }
 }
 .cart-icon {
-  /* ESTO ES LO QUE BUSCAS: Cambia el cursor a mano */
   cursor: pointer; 
-  
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px; /* Un poco de espacio para que sea fácil de clickear */
+  padding: 8px;
   transition: all 0.2s ease-in-out;
-  
-  /* Evita que el usuario seleccione el icono por accidente */
-  user-select: none; 
+  user-select: none;
+  position: relative;
 }
 
 .cart-icon svg {
@@ -92,4 +89,20 @@ h1 {
 /* Efecto visual al hacer click */
 .cart-icon:active {
   transform: scale(0.95); /* Feedback táctico de presión */
+}
+.badge-carrito {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: #ff3b30;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 800;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
 }

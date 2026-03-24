@@ -1,1 +1,64 @@
-<p>perfil works!</p>
+<div class="perfil-wrapper">
+
+  <div class="avatar-section">
+    <div class="avatar">{{ nombre.charAt(0) }}</div>
+    <h2>{{ nombre }}</h2>
+    <span class="badge-cliente">Cliente VelocityBikes</span>
+  </div>
+
+  @if (guardado) {
+    <div class="alerta-guardado">✓ Datos guardados correctamente</div>
+  }
+
+  <div class="perfil-card">
+    <div class="card-header">
+      <h3>Datos personales</h3>
+      @if (!editando) {
+        <button class="btn-editar" (click)="iniciarEdicion()">✏️ Editar</button>
+      }
+    </div>
+
+    @if (!editando) {
+      <div class="dato-fila">
+        <span class="dato-label">Nombre</span>
+        <span class="dato-valor">{{ nombre }}</span>
+      </div>
+      <div class="dato-fila">
+        <span class="dato-label">Email</span>
+        <span class="dato-valor">{{ email }}</span>
+      </div>
+      <div class="dato-fila">
+        <span class="dato-label">Teléfono</span>
+        <span class="dato-valor">{{ telefono }}</span>
+      </div>
+    }
+
+    @if (editando) {
+      <div class="form-grupo">
+        <label>Nombre</label>
+        <input type="text" [(ngModel)]="nombreTemp" placeholder="Tu nombre" />
+      </div>
+      <div class="form-grupo">
+        <label>Email</label>
+        <input type="email" [(ngModel)]="emailTemp" placeholder="Tu email" />
+      </div>
+      <div class="form-grupo">
+        <label>Teléfono</label>
+        <input type="tel" [(ngModel)]="telefonoTemp" placeholder="Tu teléfono" />
+      </div>
+      <div class="form-botones">
+        <button class="btn-guardar" (click)="guardar()">Guardar cambios</button>
+        <button class="btn-cancelar" (click)="cancelar()">Cancelar</button>
+      </div>
+    }
+  </div>
+
+  <div class="perfil-card info-tienda">
+    <h3>Sobre VelocityBikes</h3>
+    <p>📍 Córdoba, Argentina</p>
+    <p>📞 +54 351 000-0000</p>
+    <p>📧 info@velocitybikes.com</p>
+    <p>🕘 Lun–Sáb 9:00 a 19:00</p>
+  </div>
+
+</div>

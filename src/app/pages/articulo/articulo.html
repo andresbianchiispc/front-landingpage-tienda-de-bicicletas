@@ -17,15 +17,19 @@
             <li><strong>•</strong> {{ s }}</li>
           }
         </ul>
-        <div class="fade-overlay" (click)="mostrarSpecs = true"></div>
+        @if (!mostrarSpecs) {
+          <div class="fade-overlay" (click)="mostrarSpecs = true"></div>
+        }
       </div>
     </div>
 
     <div class="acciones">
-      <button class="btn-comprar">Finalizar Compra</button>
-      <a href="https://wa.me/5493510000000?text=Hola! Me interesa la bici {{producto.nombre}}" 
+      <button class="btn-comprar" [class.agregado]="agregado" (click)="agregarAlCarrito()">
+        @if (agregado) { ✓ Agregado al carrito } @else { 🛒 Agregar al carrito }
+      </button>
+      <a [href]="'https://wa.me/5493510000000?text=Hola! Me interesa la bici ' + producto.nombre" 
          target="_blank" class="btn-whatsapp">
-         Consultar por WhatsApp
+         💬 Consultar por WhatsApp
       </a>
     </div>
   </div>
