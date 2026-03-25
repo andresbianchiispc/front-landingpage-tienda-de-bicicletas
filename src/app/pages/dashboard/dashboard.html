@@ -1,0 +1,247 @@
+<div class="dashboard-wrapper">
+  @if (!esAdmin) {
+    <div class="dashboard-card acceso-denegado">
+      <h2>Acceso restringido</h2>
+      <p>Solo el administrador puede gestionar publicaciones.</p>
+      <button class="btn-base btn-primario" routerLink="/perfil">Ir a iniciar sesión</button>
+    </div>
+  }
+
+  @if (esAdmin) {
+    <section class="dashboard-hero">
+      <div>
+        <p class="eyebrow">Panel de administración</p>
+        <h1>Gestioná clientes, publicaciones y visibilidad del catálogo</h1>
+        <p class="hero-copy">Cada bloque separa claramente altas de clientes, revisión de publicaciones y productos fuera de catálogo.</p>
+      </div>
+
+      <div class="dashboard-kpis">
+        <article class="kpi-card">
+          <span class="kpi-label">Clientes</span>
+          <strong>{{ clientes.length }}</strong>
+        </article>
+        <article class="kpi-card kpi-warn">
+          <span class="kpi-label">Pendientes</span>
+          <strong>{{ publicacionesPendientes.length }}</strong>
+        </article>
+        <article class="kpi-card kpi-ok">
+          <span class="kpi-label">Aprobadas</span>
+          <strong>{{ publicacionesAprobadas.length }}</strong>
+        </article>
+        <article class="kpi-card kpi-muted">
+          <span class="kpi-label">Ocultas</span>
+          <strong>{{ productosOcultos.length }}</strong>
+        </article>
+      </div>
+    </section>
+
+    <div class="dashboard-card seccion-clientes">
+      <div class="section-head">
+        <div>
+          <h2>Gestionar clientes</h2>
+          <p class="texto-secundario">Creá accesos con mail y contraseña para que puedan iniciar sesión y publicar productos.</p>
+        </div>
+        <span class="section-badge">{{ clientes.length }} activos</span>
+      </div>
+
+      <div class="cliente-form-grid">
+        <div class="form-grupo-dashboard">
+          <label>Mail del cliente</label>
+          <input type="email" [(ngModel)]="emailClienteNuevo" placeholder="cliente@correo.com" />
+        </div>
+
+        <div class="form-grupo-dashboard">
+          <label>Contraseña</label>
+          <input type="password" [(ngModel)]="passwordClienteNuevo" placeholder="Contraseña inicial" />
+        </div>
+      </div>
+
+      @if (errorCliente) {
+        <p class="mensaje-estado mensaje-error">{{ errorCliente }}</p>
+      }
+
+      @if (exitoCliente) {
+        <p class="mensaje-estado mensaje-exito">{{ exitoCliente }}</p>
+      }
+
+      <div class="section-actions">
+        <button class="btn-base btn-primario" (click)="crearCliente()">Crear cliente</button>
+      </div>
+
+      <div class="lista-clientes">
+        @if (clientes.length === 0) {
+          <p class="texto-secundario">Todavía no hay clientes habilitados.</p>
+        }
+
+        @for (cliente of clientes; track cliente.email) {
+          <article class="fila-publicacion fila-cliente">
+            <div class="fila-contenido">
+              <p class="titulo-publicacion">{{ cliente.email }}</p>
+              <p class="meta-publicacion">Puede iniciar sesión y publicar productos</p>
+              <div class="cliente-stats">
+                <span class="estado-badge estado-total">{{ getResumenCliente(cliente.email).total }} totales</span>
+                <span class="estado-badge estado-pendiente">{{ getResumenCliente(cliente.email).pendientes }} pendientes</span>
+                <span class="estado-badge estado-aprobado">{{ getResumenCliente(cliente.email).aprobadas }} aprobadas</span>
+              </div>
+              @if (estaEditandoPassword(cliente.email)) {
+                <div class="password-editor-inline">
+                  <input
+                    type="password"
+                    [(ngModel)]="passwordClienteEdicion"
+                    placeholder="Nueva contraseña"
+                  />
+                  <button class="btn-base btn-primario" (click)="guardarPasswordCliente(cliente.email)">
+                    Guardar clave
+                  </button>
+                  <button class="btn-base btn-fantasma" (click)="cancelarEdicionPassword()">
+                    Cancelar
+                  </button>
+                </div>
+              }
+            </div>
+            <div class="acciones-publicacion acciones-cliente">
+              <button class="btn-base btn-fantasma" (click)="alternarDetalleCliente(cliente.email)">
+                @if (clienteTieneDetalleAbierto(cliente.email)) { Ocultar publicaciones } @else { Ver publicaciones }
+              </button>
+              @if (!estaEditandoPassword(cliente.email)) {
+                <button class="btn-base btn-primario" (click)="iniciarEdicionPassword(cliente.email)">
+                  Cambiar clave
+                </button>
+              }
+              <button
+                class="btn-base btn-peligro"
+                [disabled]="clienteTienePendientes(cliente.email)"
+                (click)="eliminarCliente(cliente.email)"
+              >
+                Eliminar acceso
+              </button>
+            </div>
+          </article>
+          @if (clienteTienePendientes(cliente.email)) {
+            <p class="meta-publicacion alerta-cliente">Primero resolvé sus publicaciones pendientes para poder eliminarlo.</p>
+          }
+          @if (clienteTieneDetalleAbierto(cliente.email)) {
+            <div class="cliente-publicaciones-detalle">
+              @if (getPublicacionesCliente(cliente.email).length === 0) {
+                <p class="texto-secundario">Este cliente todavía no publicó productos.</p>
+              }
+
+              @for (publicacion of getPublicacionesCliente(cliente.email); track publicacion.id) {
+                <div class="fila-publicacion fila-publicacion-detalle">
+                  <div>
+                    <p class="titulo-publicacion">{{ publicacion.nombre }}</p>
+                    <p class="meta-publicacion">{{ publicacion.publicadoPor }}</p>
+                    <span class="estado-badge" [class.estado-pendiente]="publicacion.estado === 'pendiente'" [class.estado-aprobado]="publicacion.estado === 'aprobada'">
+                      {{ publicacion.estado === 'pendiente' ? 'Pendiente' : 'Aprobada' }}
+                    </span>
+                  </div>
+                  <button
+                    class="btn-base btn-fantasma"
+                    [routerLink]="['/articulo', publicacion.id]"
+                    [queryParams]="getQueryParamsDetalle(publicacion.estado)"
+                  >
+                    Abrir publicación
+                  </button>
+                </div>
+              }
+            </div>
+          }
+        }
+      </div>
+    </div>
+
+    <div class="dashboard-card">
+      <div class="section-head">
+        <div>
+          <h2>Publicaciones pendientes</h2>
+          <p class="texto-secundario">Revisá lo que subieron los clientes antes de mostrarlo en el catálogo.</p>
+        </div>
+        <span class="section-badge section-badge-warn">{{ publicacionesPendientes.length }} por revisar</span>
+      </div>
+
+      @if (publicacionesPendientes.length === 0) {
+        <p class="texto-secundario">No hay publicaciones pendientes.</p>
+      }
+
+      @for (producto of publicacionesPendientes; track producto.id) {
+        <div class="fila-publicacion">
+          <div class="fila-contenido">
+            <p class="titulo-publicacion">{{ producto.nombre }}</p>
+            <p class="meta-publicacion">Publicado por {{ producto.publicadoPor }}</p>
+            <span class="estado-badge estado-pendiente">Pendiente</span>
+          </div>
+          <div class="acciones-publicacion">
+            <button
+              class="btn-base btn-fantasma"
+              [routerLink]="['/articulo', producto.id]"
+              [queryParams]="getQueryParamsDetalle('pendiente')"
+            >
+              Ver publicación
+            </button>
+            <button class="btn-base btn-exito" (click)="aprobarPublicacion(producto.id)">Aprobar</button>
+            <button class="btn-base btn-peligro" (click)="rechazarPublicacion(producto.id)">Rechazar</button>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="dashboard-card">
+      <div class="section-head">
+        <div>
+          <h2>Productos visibles en catálogo</h2>
+          <p class="texto-secundario">Estas publicaciones ya fueron aprobadas y hoy están expuestas al cliente final.</p>
+        </div>
+        <span class="section-badge section-badge-ok">{{ publicacionesAprobadas.length }} visibles</span>
+      </div>
+
+      @if (publicacionesAprobadas.length === 0) {
+        <p class="texto-secundario">No hay publicaciones aprobadas.</p>
+      }
+
+      @for (producto of publicacionesAprobadas; track producto.id) {
+        <div class="fila-publicacion">
+          <div class="fila-contenido">
+            <p class="titulo-publicacion">{{ producto.nombre }}</p>
+            <p class="meta-publicacion">Publicado por {{ producto.publicadoPor }}</p>
+            <span class="estado-badge estado-aprobado">Aprobada</span>
+          </div>
+          <div class="acciones-publicacion">
+            <button
+              class="btn-base btn-fantasma"
+              [routerLink]="['/articulo', producto.id]"
+              [queryParams]="getQueryParamsDetalle('aprobada')"
+            >
+              Ver publicación
+            </button>
+            <button class="btn-base btn-peligro" (click)="quitarPublicacionAprobada(producto.id)">Quitar</button>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="dashboard-card">
+      <div class="section-head">
+        <div>
+          <h2>Productos ocultos</h2>
+          <p class="texto-secundario">Productos retirados del catálogo que todavía podés restaurar.</p>
+        </div>
+        <span class="section-badge section-badge-muted">{{ productosOcultos.length }} ocultos</span>
+      </div>
+
+      @if (productosOcultos.length === 0) {
+        <p class="texto-secundario">No hay productos ocultos.</p>
+      }
+
+      @for (producto of productosOcultos; track producto.id) {
+        <div class="fila-publicacion">
+          <div class="fila-contenido">
+            <p class="titulo-publicacion">{{ producto.nombre }}</p>
+            <p class="meta-publicacion">Oculto del catálogo</p>
+            <span class="estado-badge estado-oculto">Oculto</span>
+          </div>
+          <button class="btn-base btn-exito" (click)="restaurarProducto(producto.id)">Restaurar</button>
+        </div>
+      }
+    </div>
+  }
+</div>

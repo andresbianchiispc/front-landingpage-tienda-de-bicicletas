@@ -1,13 +1,13 @@
 <header>
   <div class="container-header">
-    <div class="logo" routerLink="/">
-      VELOCITY<span>BIKES</span>
+    <div class="brand-block">
+      <div class="logo" routerLink="/">VELOCITY<span>BIKES</span></div>
+      <h1 [textContent]="headerService.titulo()"></h1>
     </div>
 
-    <h1 [textContent]="headerService.titulo()"></h1>
-
-    <div class="cart-icon" routerLink="/carrito" title="Ver mi carrito">
-      <svg width="28" height="28" viewBox="0 0 512 512" fill="currentColor">
+    <div class="header-actions">
+      <div class="cart-icon" routerLink="/carrito" title="Ver mi carrito">
+        <svg width="28" height="28" viewBox="0 0 512 512" fill="currentColor">
         <polygon points="236.42,425.105 271.759,425.105 273.104,357.194 235.091,357.194 "></polygon>
         <polygon points="415.611,269.952 373.037,269.952 369.713,328.786 410.439,328.786 "></polygon>
         <path
@@ -24,10 +24,24 @@
         <path
           d="M485.838,181.075h-52.904L325.206,66.73c0.512-2.147,0.833-4.355,0.833-6.632 c0-7.74-3.179-14.877-8.268-19.935c-5.065-5.089-12.194-8.267-19.926-8.252c-7.74-0.015-14.877,3.179-19.935,8.252 c-5.089,5.058-8.259,12.195-8.252,19.935c-0.007,7.74,3.163,14.876,8.252,19.934c5.058,5.081,12.195,8.268,19.935,8.252 c1.696,0,3.354-0.176,4.982-0.466l87.846,93.256h-269.36l87.854-93.256c1.62,0.29,3.285,0.466,4.989,0.466 c7.733,0.016,14.869-3.171,19.928-8.252c5.081-5.058,8.267-12.195,8.259-19.934c0.008-7.74-3.178-14.877-8.259-19.935 c-5.058-5.073-12.188-8.267-19.928-8.252c-7.748-0.015-14.884,3.163-19.942,8.252c-5.074,5.058-8.26,12.195-8.252,19.935 c0,2.277,0.305,4.485,0.818,6.632L79.059,181.075H26.154C11.706,181.075,0,192.78,0,207.228V219.5 c0,13.96,10.949,25.329,24.718,26.078L50.024,432.28h0.008c1.551,13.532,8.069,25.498,17.574,34.009 c9.574,8.604,22.296,13.8,36.049,13.8H404.54c13.746,0,26.468-5.196,36.049-13.8c9.506-8.512,16.015-20.477,17.574-34.009 l25.299-186.625h2.376c14.441,0,26.162-11.714,26.162-26.154v-12.272C512,192.78,500.279,181.075,485.838,181.075z">
         </path>
-      </svg>
-      @if (headerService.cantidadTotal > 0) {
-      <span class="badge-carrito">{{ headerService.cantidadTotal }}</span>
+        </svg>
+        @if (headerService.cantidadTotal > 0) {
+        <span class="badge-carrito">{{ headerService.cantidadTotal }}</span>
+        }
+      </div>
+
+      @if (haySesion) {
+        <button class="btn-logout" (click)="cerrarSesion()" type="button">
+          Salir
+        </button>
       }
     </div>
   </div>
+
+  @if (haySesion) {
+    <div class="session-strip">
+      <span class="session-role">{{ etiquetaSesion }}</span>
+      <span class="session-email">{{ emailSesion }}</span>
+    </div>
+  }
 </header>

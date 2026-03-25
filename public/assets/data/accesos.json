@@ -1,0 +1,10 @@
+{
+  "invitaciones": [],
+  "usuariosConAcceso": [
+    {
+      "email": "usuario@velocitybikes.com",
+      "password": "user1234",
+      "habilitado": true
+    }
+  ]
+}

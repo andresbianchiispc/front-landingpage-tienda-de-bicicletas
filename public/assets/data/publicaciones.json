@@ -1,0 +1,33 @@
+{
+  "pendientes": [],
+  "aprobadas": [
+    {
+      "id": 990001,
+      "nombre": "Bicicleta Urbana Rodado 29 - Usuario",
+      "precio": 165000,
+      "especificaciones": [
+        "Rodado 29",
+        "Frenos a disco mecánico",
+        "21 velocidades"
+      ],
+      "fotoUrl": "https://picsum.photos/seed/publicacion-user-1/400",
+      "categoriaId": 4,
+      "publicadoPor": "usuario1@correo.com",
+      "esPublicacionUsuario": true
+    },
+    {
+      "id": 990002,
+      "nombre": "Casco Integral MTB - Usuario",
+      "precio": 22000,
+      "especificaciones": [
+        "Talle M",
+        "Sistema MIPS",
+        "Visera desmontable"
+      ],
+      "fotoUrl": "https://picsum.photos/seed/publicacion-user-2/400",
+      "categoriaId": 5,
+      "publicadoPor": "usuario2@correo.com",
+      "esPublicacionUsuario": true
+    }
+  ]
+}

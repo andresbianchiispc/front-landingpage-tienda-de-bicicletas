@@ -4,4 +4,7 @@ export interface Producto {
   precio: number;
   especificaciones: string[];
   fotoUrl: string;
+  categoriaId?: number;
+  publicadoPor?: string;
+  esPublicacionUsuario?: boolean;
 }

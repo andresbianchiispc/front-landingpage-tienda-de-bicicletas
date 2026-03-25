@@ -6,6 +6,30 @@
                 <img [src]="prod.fotoUrl" class="producto-img" [alt]="prod.nombre">
             </div>
 
+            @if (productoEditandoId === prod.id) {
+            <div class="admin-editor">
+                <div class="form-grupo">
+                    <label>Nombre</label>
+                    <input type="text" [(ngModel)]="nombreEdicion">
+                </div>
+                <div class="form-grupo">
+                    <label>Precio</label>
+                    <input type="number" [(ngModel)]="precioEdicion">
+                </div>
+                <div class="form-grupo">
+                    <label>Foto</label>
+                    <input type="url" [(ngModel)]="fotoEdicion">
+                </div>
+                <div class="form-grupo">
+                    <label>Especificaciones</label>
+                    <textarea rows="3" [(ngModel)]="specsEdicion"></textarea>
+                </div>
+                <div class="acciones-editor">
+                    <button class="btn-editar-admin" (click)="guardarEdicion(prod)">Guardar</button>
+                    <button class="btn-cancelar-admin" (click)="cancelarEdicion()">Cancelar</button>
+                </div>
+            </div>
+            } @else {
             <div class="info-body">
                 <div class="info-content">
                     <h4>{{ prod.nombre }}</h4>
@@ -19,9 +43,18 @@
                 <div class="fade-overlay-card"></div>
             </div>
 
-            <button class="btn-comprar" [routerLink]="['/articulo', prod.id]">
-                Ver Detalle
-            </button>
+            <div class="acciones-card">
+                <button class="btn-comprar" [routerLink]="['/articulo', prod.id]">
+                    Ver Detalle
+                </button>
+                @if (esAdmin) {
+                <div class="acciones-admin-card">
+                    <button class="btn-editar-admin" (click)="iniciarEdicion(prod)">Editar</button>
+                    <button class="btn-cancelar-admin" (click)="ocultarProducto(prod)">Eliminar</button>
+                </div>
+                }
+            </div>
+            }
         </div>
         }
     </div>

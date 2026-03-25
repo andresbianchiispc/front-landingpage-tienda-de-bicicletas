@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { HeaderService } from '../../core/services/header.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -12,39 +13,49 @@ import { FormsModule } from '@angular/forms';
 })
 export class Perfil implements OnInit {
   headerService = inject(HeaderService);
+  private router = inject(Router);
 
-  nombre = 'Andrés Bianchi';
-  email = 'andres@velocitybikes.com';
-  telefono = '+54 351 000-0000';
-  editando = false;
-  guardado = false;
-
-  // Copia temporal para editar
-  nombreTemp = '';
-  emailTemp = '';
-  telefonoTemp = '';
+  usuarioLogin = '';
+  passwordLogin = '';
+  errorLogin = '';
 
   ngOnInit() {
     this.headerService.titulo.set('Mi Perfil');
   }
 
-  iniciarEdicion() {
-    this.nombreTemp = this.nombre;
-    this.emailTemp = this.email;
-    this.telefonoTemp = this.telefono;
-    this.editando = true;
+  iniciarSesion() {
+    this.errorLogin = '';
+
+    if (!this.usuarioLogin.trim() || !this.passwordLogin.trim()) {
+      this.errorLogin = 'Completá usuario y contraseña para iniciar sesión';
+      return;
+    }
+
+    const resultado = this.headerService.iniciarSesion(
+      this.usuarioLogin.trim(),
+      this.passwordLogin.trim()
+    );
+
+    if (!resultado.ok) {
+      this.errorLogin = resultado.mensaje || 'No se pudo iniciar sesión';
+      return;
+    }
+
+    this.passwordLogin = '';
+
+    if (resultado.rol === 'admin') {
+      void this.router.navigate(['/dashboard']);
+      return;
+    }
+
+    void this.router.navigate(['/publicar']);
   }
 
-  guardar() {
-    this.nombre = this.nombreTemp;
-    this.email = this.emailTemp;
-    this.telefono = this.telefonoTemp;
-    this.editando = false;
-    this.guardado = true;
-    setTimeout(() => (this.guardado = false), 2000);
+  cerrarSesion() {
+    this.headerService.cerrarSesion();
+    this.usuarioLogin = '';
+    this.passwordLogin = '';
   }
 
-  cancelar() {
-    this.editando = false;
-  }
 }
+

@@ -1,64 +1,38 @@
 <div class="perfil-wrapper">
+  <section class="perfil-hero">
+    <div>
+      <p class="eyebrow">Acceso</p>
+      <h1>Entrá para publicar o administrar el catálogo</h1>
+      <p class="hero-copy">Usá tu usuario o tu mail. Si sos admin vas al panel de control; si sos cliente vas directo a publicar.</p>
+    </div>
+  </section>
 
-  <div class="avatar-section">
-    <div class="avatar">{{ nombre.charAt(0) }}</div>
-    <h2>{{ nombre }}</h2>
-    <span class="badge-cliente">Cliente VelocityBikes</span>
-  </div>
-
-  @if (guardado) {
-    <div class="alerta-guardado">✓ Datos guardados correctamente</div>
-  }
-
-  <div class="perfil-card">
+  <section class="perfil-card perfil-card-form">
     <div class="card-header">
-      <h3>Datos personales</h3>
-      @if (!editando) {
-        <button class="btn-editar" (click)="iniciarEdicion()">✏️ Editar</button>
-      }
+      <div>
+        <h2>Iniciar sesión</h2>
+        <p class="texto-secundario">Completá tus credenciales para acceder a tu flujo correspondiente.</p>
+      </div>
     </div>
 
-    @if (!editando) {
-      <div class="dato-fila">
-        <span class="dato-label">Nombre</span>
-        <span class="dato-valor">{{ nombre }}</span>
+    <div class="form-grid">
+      <div class="form-grupo">
+        <label>Usuario o mail</label>
+        <input type="text" [(ngModel)]="usuarioLogin" placeholder="cliente@correo.com" />
       </div>
-      <div class="dato-fila">
-        <span class="dato-label">Email</span>
-        <span class="dato-valor">{{ email }}</span>
+
+      <div class="form-grupo">
+        <label>Contraseña</label>
+        <input type="password" [(ngModel)]="passwordLogin" placeholder="Tu contraseña" />
       </div>
-      <div class="dato-fila">
-        <span class="dato-label">Teléfono</span>
-        <span class="dato-valor">{{ telefono }}</span>
-      </div>
+    </div>
+
+    @if (errorLogin) {
+      <p class="mensaje-estado mensaje-error">{{ errorLogin }}</p>
     }
 
-    @if (editando) {
-      <div class="form-grupo">
-        <label>Nombre</label>
-        <input type="text" [(ngModel)]="nombreTemp" placeholder="Tu nombre" />
-      </div>
-      <div class="form-grupo">
-        <label>Email</label>
-        <input type="email" [(ngModel)]="emailTemp" placeholder="Tu email" />
-      </div>
-      <div class="form-grupo">
-        <label>Teléfono</label>
-        <input type="tel" [(ngModel)]="telefonoTemp" placeholder="Tu teléfono" />
-      </div>
-      <div class="form-botones">
-        <button class="btn-guardar" (click)="guardar()">Guardar cambios</button>
-        <button class="btn-cancelar" (click)="cancelar()">Cancelar</button>
-      </div>
-    }
-  </div>
-
-  <div class="perfil-card info-tienda">
-    <h3>Sobre VelocityBikes</h3>
-    <p>📍 Córdoba, Argentina</p>
-    <p>📞 +54 351 000-0000</p>
-    <p>📧 info@velocitybikes.com</p>
-    <p>🕘 Lun–Sáb 9:00 a 19:00</p>
-  </div>
-
+    <div class="acciones-formulario">
+      <button class="btn-base btn-primario" (click)="iniciarSesion()">Iniciar sesión</button>
+    </div>
+  </section>
 </div>

@@ -99,3 +99,80 @@
 .btn-comprar:hover {
     background: #e6b800;
 }
+
+.acciones-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 15px 15px;
+}
+
+.acciones-card .btn-comprar {
+    width: 100%;
+    margin: 0;
+}
+
+.admin-editor {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-grupo label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    color: #888;
+    font-weight: 700;
+}
+
+.form-grupo input,
+.form-grupo textarea {
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 0.92rem;
+    font-family: inherit;
+    outline: none;
+}
+
+.acciones-editor {
+    display: flex;
+    gap: 8px;
+}
+
+.acciones-admin-card {
+    display: flex;
+    gap: 8px;
+}
+
+.acciones-admin-card button {
+    flex: 1;
+}
+
+.btn-editar-admin,
+.btn-cancelar-admin {
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn-editar-admin {
+    background: #1a1a1a;
+    color: #ffcc00;
+}
+
+.btn-cancelar-admin {
+    background: #f4f4f4;
+    color: #444;
+}

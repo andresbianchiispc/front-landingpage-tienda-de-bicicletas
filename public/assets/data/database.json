@@ -2,104 +2,708 @@
   {
     "id": 1,
     "nombre": "Bicicletas de Montaña",
-    "fotoUrl": "https://images.unsplash.com/photo-1511994298241-608e28f14fde?q=80&w=1000&auto=format&fit=crop",
+    "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/93126-00_epic-wc-sw-carb-bluprl-metwhtsil_hero_dark-pdp-92078f66683d1dc5b617617696258498-1024-1024.webp",
     "productos": [
-      { "id": "101", "nombre": "MTB R29 Hardtail", "precio": 150000, "especificaciones": ["Cuadro Aluminio 6061","21 Velocidades Shimano","Frenos de Disco","120ml","18 velocidades","Frenos de Disco","120ml","18 velocidades"], "fotoUrl": "https://picsum.photos/seed/mtb1/400" },
-      { "id": "102", "nombre": "MTB Full Carbono Pro", "precio": 450000, "especificaciones": ["Cuadro Carbono","SRAM 1x12","Suspensión Aire"], "fotoUrl": "https://picsum.photos/seed/mtb2/400" },
-      { "id": "103", "nombre": "MTB Trail X-Enduro", "precio": 380000, "especificaciones": ["Doble Suspensión","Cubiertas Maxxis","Dropper"], "fotoUrl": "https://picsum.photos/seed/mtb3/400" },
-      { "id": "104", "nombre": "MTB Pro XC Race", "precio": 290000, "especificaciones": ["Geometría XC","Shimano Deore","Horquilla 100mm"], "fotoUrl": "https://picsum.photos/seed/mtb4/400" },
-      { "id": "105", "nombre": "MTB All Mountain", "precio": 410000, "especificaciones": ["Suspensión 140mm","Frenos hidráulicos","Ruedas 29"], "fotoUrl": "https://picsum.photos/seed/mtb5/400" },
-      { "id": "106", "nombre": "MTB Beginner 27.5", "precio": 120000, "especificaciones": ["Rodado 27.5","18 velocidades","Frenos V-Brake"], "fotoUrl": "https://picsum.photos/seed/mtb6/400" },
-      { "id": "107", "nombre": "MTB Pro Trail Carbon", "precio": 500000, "especificaciones": ["Carbono","SRAM GX","Tubeless"], "fotoUrl": "https://picsum.photos/seed/mtb7/400" },
-      { "id": "108", "nombre": "MTB Enduro Elite", "precio": 600000, "especificaciones": ["160mm","RockShox","Dropper"], "fotoUrl": "https://picsum.photos/seed/mtb8/400" },
-      { "id": "109", "nombre": "MTB Urban Trail", "precio": 180000, "especificaciones": ["Uso mixto","Shimano Altus","Disco mecánico"], "fotoUrl": "https://picsum.photos/seed/mtb9/400" },
-      { "id": "110", "nombre": "MTB Kids 24", "precio": 90000, "especificaciones": ["Rodado 24","7 velocidades","Frenos V"], "fotoUrl": "https://picsum.photos/seed/mtb10/400" }
+      {
+        "id": "101",
+        "nombre": "MTB R29 Hardtail",
+        "precio": 150000,
+        "especificaciones": [
+          "Cuadro Aluminio 6061",
+          "21 Velocidades Shimano",
+          "Frenos de Disco",
+          "120ml",
+          "18 velocidades",
+          "Frenos de Disco",
+          "120ml",
+          "18 velocidades"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/94926-03_tarmac-sl8-sw-axs-redsky-shdwsil-wht_hero-pdp_dark-281adb44fb56c24c5817616044687913-1024-1024.webp"
+      },
+      {
+        "id": "102",
+        "nombre": "MTB Full Carbono Pro",
+        "precio": 450000,
+        "especificaciones": [
+          "Cuadro Carbono",
+          "SRAM 1x12",
+          "Suspensión Aire"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/93126-00_epic-wc-sw-carb-bluprl-metwhtsil_hero_dark-pdp-92078f66683d1dc5b617617696258498-1024-1024.webp"
+      },
+      {
+        "id": "103",
+        "nombre": "MTB Trail X-Enduro",
+        "precio": 380000,
+        "especificaciones": [
+          "Doble Suspensión",
+          "Cubiertas Maxxis",
+          "Dropper"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/93126-01_epic-wc-sw-metpngrn-ois-lqdmet_hero-square-385eed6e21601088d517616037084112-1024-1024.webp"
+      },
+      {
+        "id": "104",
+        "nombre": "MTB Pro XC Race",
+        "precio": 290000,
+        "especificaciones": [
+          "Geometría XC",
+          "Shimano Deore",
+          "Horquilla 100mm"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/img_5772-d62c35fe18364f215117110530361220-1024-1024.webp"
+      },
+      {
+        "id": "105",
+        "nombre": "MTB All Mountain",
+        "precio": 410000,
+        "especificaciones": [
+          "Suspensión 140mm",
+          "Frenos hidráulicos",
+          "Ruedas 29"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/98123-51_creo-sl-comp-carbon-dplake-dplakemet_hero-a9bffd1625cbbd73df17682225289475-1024-1024.webp"
+      },
+      {
+        "id": "106",
+        "nombre": "MTB Beginner 27.5",
+        "precio": 120000,
+        "especificaciones": [
+          "Rodado 27.5",
+          "18 velocidades",
+          "Frenos V-Brake"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/epic-wc-s-06aaa078d566b5dba417597552018777-1024-1024.webp"
+      },
+      {
+        "id": "107",
+        "nombre": "MTB Pro Trail Carbon",
+        "precio": 500000,
+        "especificaciones": [
+          "Carbono",
+          "SRAM GX",
+          "Tubeless"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/91326-51_epic-ht-comp-carb-metwhtsil_hero-pdp-b80b0378af9b8d244a17679925399819-1024-1024.webp"
+      },
+      {
+        "id": "108",
+        "nombre": "MTB Enduro Elite",
+        "precio": 600000,
+        "especificaciones": [
+          "160mm",
+          "RockShox",
+          "Dropper"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/95426-50_diverge-comp-dlmmet-orgzst_hero-pdp-f932a08f0d06e629b117682209227714-1024-1024.webp"
+      },
+      {
+        "id": "109",
+        "nombre": "MTB Urban Trail",
+        "precio": 180000,
+        "especificaciones": [
+          "Uso mixto",
+          "Shimano Altus",
+          "Disco mecánico"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/93826-70_chisel-base-redsky-flored_hero-pdp-ae39d2313f2d83870d17679618096485-1024-1024.webp"
+      },
+      {
+        "id": "110",
+        "nombre": "MTB Kids 24",
+        "precio": 90000,
+        "especificaciones": [
+          "Rodado 24",
+          "7 velocidades",
+          "Frenos V"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/95426-51_diverge-e5-comp-mvemet-obsd_hero-pdp-37dafb05df31ef912617616041394997-1024-1024.webp"
+      }
     ]
   },
   {
     "id": 2,
     "nombre": "Bicicletas de Ruta & Gravel",
-    "fotoUrl": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=1000&auto=format&fit=crop",
+    "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/94926-03_tarmac-sl8-sw-axs-redsky-shdwsil-wht_hero-pdp_dark-281adb44fb56c24c5817616044687913-1024-1024.webp",
     "productos": [
-      { "id": "201", "nombre": "Ruta Competition Carbon", "precio": 320000, "especificaciones": ["Carbono","Shimano 105","Perfil 38mm"], "fotoUrl": "https://picsum.photos/seed/ruta1/400" },
-      { "id": "202", "nombre": "Gravel Adventure Plus", "precio": 210000, "especificaciones": ["Aluminio","Horquilla carbono","Disco"], "fotoUrl": "https://picsum.photos/seed/ruta2/400" },
-      { "id": "203", "nombre": "Ruta Endurance Light", "precio": 275000, "especificaciones": ["Confort","Tiagra","700x28"], "fotoUrl": "https://picsum.photos/seed/ruta3/400" },
-      { "id": "204", "nombre": "Ruta Aero Pro", "precio": 390000, "especificaciones": ["Aero","Ultegra","Carbono"], "fotoUrl": "https://picsum.photos/seed/ruta4/400" },
-      { "id": "205", "nombre": "Gravel Touring", "precio": 230000, "especificaciones": ["Portaequipaje","Disco","Cubiertas 40c"], "fotoUrl": "https://picsum.photos/seed/ruta5/400" },
-      { "id": "206", "nombre": "Ruta Clásica", "precio": 180000, "especificaciones": ["Acero","Shimano Claris","Frenos caliper"], "fotoUrl": "https://picsum.photos/seed/ruta6/400" },
-      { "id": "207", "nombre": "Gravel Carbon Elite", "precio": 420000, "especificaciones": ["Carbono","SRAM","Tubeless"], "fotoUrl": "https://picsum.photos/seed/ruta7/400" },
-      { "id": "208", "nombre": "Ruta Speed Race", "precio": 350000, "especificaciones": ["Ligera","Ultegra","Perfil alto"], "fotoUrl": "https://picsum.photos/seed/ruta8/400" },
-      { "id": "209", "nombre": "Gravel Explorer", "precio": 200000, "especificaciones": ["Mixta","Shimano","Disco"], "fotoUrl": "https://picsum.photos/seed/ruta9/400" },
-      { "id": "210", "nombre": "Ruta Fitness", "precio": 160000, "especificaciones": ["Plano","Shimano","Uso urbano"], "fotoUrl": "https://picsum.photos/seed/ruta10/400" }
+      {
+        "id": "201",
+        "nombre": "Ruta Competition Carbon",
+        "precio": 320000,
+        "especificaciones": [
+          "Carbono",
+          "Shimano 105",
+          "Perfil 38mm"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/epichardtail_fieryred_01-2-68466754b32609674117172508429217-1024-1024.webp"
+      },
+      {
+        "id": "202",
+        "nombre": "Gravel Adventure Plus",
+        "precio": 210000,
+        "especificaciones": [
+          "Aluminio",
+          "Horquilla carbono",
+          "Disco"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/90026-70_allez-e5-comp-cstblumet-dunewht_hero-pdp-f96ebf40e5ce2223dd17700633671544-1024-1024.webp"
+      },
+      {
+        "id": "203",
+        "nombre": "Ruta Endurance Light",
+        "precio": 275000,
+        "especificaciones": [
+          "Confort",
+          "Tiagra",
+          "700x28"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/bicicleta_ruta_merida_scultura_rim_4000_2022_1_imagen4-6787faea5308a249cb17277963300784-1024-1024.webp"
+      },
+      {
+        "id": "204",
+        "nombre": "Ruta Aero Pro",
+        "precio": 390000,
+        "especificaciones": [
+          "Aero",
+          "Ultegra",
+          "Carbono"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/1-130b0205687446fb2a17429951293312-640-0-123ad2d82682daf12217517220893834-1024-1024.webp"
+      },
+      {
+        "id": "205",
+        "nombre": "Gravel Touring",
+        "precio": 230000,
+        "especificaciones": [
+          "Portaequipaje",
+          "Disco",
+          "Cubiertas 40c"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/91826-33_rockhopper-expert-qtzmet-wht_hero-pdp-15f3356cdef0708fe717679931188681-1024-1024.webp"
+      },
+      {
+        "id": "206",
+        "nombre": "Ruta Clásica",
+        "precio": 180000,
+        "especificaciones": [
+          "Acero",
+          "Shimano Claris",
+          "Frenos caliper"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/41-4452749cba0be7ea0317525027995652-1024-1024.webp"
+      },
+      {
+        "id": "207",
+        "nombre": "Gravel Carbon Elite",
+        "precio": 420000,
+        "especificaciones": [
+          "Carbono",
+          "SRAM",
+          "Tubeless"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/allez_glosssmoke_01-a8a56a776d9ab17e7417446444026120-1024-1024.jpg"
+      },
+      {
+        "id": "208",
+        "nombre": "Ruta Speed Race",
+        "precio": 350000,
+        "especificaciones": [
+          "Ligera",
+          "Ultegra",
+          "Perfil alto"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/whatsapp-image-2025-01-13-at-19-39-31-229d1b7d57a673842317429072320666-1024-1024.jpeg"
+      },
+      {
+        "id": "209",
+        "nombre": "Gravel Explorer",
+        "precio": 200000,
+        "especificaciones": [
+          "Mixta",
+          "Shimano",
+          "Disco"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/rockhoppercomp_fieryred_01-1375ecdf4e5844624617114648246644-1024-1024.webp"
+      },
+      {
+        "id": "210",
+        "nombre": "Ruta Fitness",
+        "precio": 160000,
+        "especificaciones": [
+          "Plano",
+          "Shimano",
+          "Uso urbano"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/svel-1-scaled-bf7dda6335cbf1ea8017374056020769-1024-1024.webp"
+      }
     ]
   },
   {
     "id": 3,
     "nombre": "E-Bikes (Eléctricas)",
-    "fotoUrl": "https://picsum.photos/seed/ebike/800",
+    "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/98123-51_creo-sl-comp-carbon-dplake-dplakemet_hero-a9bffd1625cbbd73df17682225289475-1024-1024.webp",
     "productos": [
-      { "id": "301", "nombre": "E-MTB Power Drive", "precio": 850000, "especificaciones": ["250W","500Wh","80km"], "fotoUrl": "https://picsum.photos/seed/e1/400" },
-      { "id": "302", "nombre": "E-City Urban Eco", "precio": 520000, "especificaciones": ["Plegable","5 niveles","Batería litio"], "fotoUrl": "https://picsum.photos/seed/e2/400" },
-      { "id": "303", "nombre": "E-Road Speed", "precio": 780000, "especificaciones": ["Carbono","Ligera","Autonomía 100km"], "fotoUrl": "https://picsum.photos/seed/e3/400" },
-      { "id": "304", "nombre": "E-Gravel Hybrid", "precio": 690000, "especificaciones": ["Mixta","Disco","Motor central"], "fotoUrl": "https://picsum.photos/seed/e4/400" },
-      { "id": "305", "nombre": "E-Cargo Utility", "precio": 920000, "especificaciones": ["Carga","Batería grande","Estable"], "fotoUrl": "https://picsum.photos/seed/e5/400" },
-      { "id": "306", "nombre": "E-Folding Compact", "precio": 480000, "especificaciones": ["Plegable","Liviana","Ciudad"], "fotoUrl": "https://picsum.photos/seed/e6/400" },
-      { "id": "307", "nombre": "E-Trekking Pro", "precio": 700000, "especificaciones": ["Viajes largos","Confort","Autonomía"], "fotoUrl": "https://picsum.photos/seed/e7/400" },
-      { "id": "308", "nombre": "E-Kids Safe", "precio": 350000, "especificaciones": ["Limitador","Liviana","Segura"], "fotoUrl": "https://picsum.photos/seed/e8/400" },
-      { "id": "309", "nombre": "E-MTB Enduro", "precio": 950000, "especificaciones": ["Potente","Suspensión","Pro"], "fotoUrl": "https://picsum.photos/seed/e9/400" },
-      { "id": "310", "nombre": "E-City Deluxe", "precio": 600000, "especificaciones": ["Premium","Cómoda","Silenciosa"], "fotoUrl": "https://picsum.photos/seed/e10/400" }
+      {
+        "id": "301",
+        "nombre": "E-MTB Power Drive",
+        "precio": 850000,
+        "especificaciones": [
+          "250W",
+          "500Wh",
+          "80km"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/venzo-xl-roja-1d7cf92f164e2ea34517595069614030-1024-1024.webp"
+      },
+      {
+        "id": "302",
+        "nombre": "E-City Urban Eco",
+        "precio": 520000,
+        "especificaciones": [
+          "Plegable",
+          "5 niveles",
+          "Batería litio"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/venzo-xl-roja-2ff99ce47f898521a317595065405780-1024-1024.webp"
+      },
+      {
+        "id": "303",
+        "nombre": "E-Road Speed",
+        "precio": 780000,
+        "especificaciones": [
+          "Carbono",
+          "Ligera",
+          "Autonomía 100km"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/p1_rustedred_01-282900e21ca53e01bb17359266610052-1024-1024.webp"
+      },
+      {
+        "id": "304",
+        "nombre": "E-Gravel Hybrid",
+        "precio": 690000,
+        "especificaciones": [
+          "Mixta",
+          "Disco",
+          "Motor central"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/venzoxlverde1-04f66908ce3ab7414f17595064902183-1024-1024.webp"
+      },
+      {
+        "id": "305",
+        "nombre": "E-Cargo Utility",
+        "precio": 920000,
+        "especificaciones": [
+          "Carga",
+          "Batería grande",
+          "Estable"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/d_nq_np_2x_900692-mla74175916031_012024-f-dcbf27ad8dc7b7a1fc17367944397940-1024-1024.webp"
+      },
+      {
+        "id": "306",
+        "nombre": "E-Folding Compact",
+        "precio": 480000,
+        "especificaciones": [
+          "Plegable",
+          "Liviana",
+          "Ciudad"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/pinon-sram-gx-negro-8ff305240eb5381bc317659259413064-1024-1024.webp"
+      },
+      {
+        "id": "307",
+        "nombre": "E-Trekking Pro",
+        "precio": 700000,
+        "especificaciones": [
+          "Viajes largos",
+          "Confort",
+          "Autonomía"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/img_8953-f29151f91448db63be17175395696740-1024-1024.webp"
+      },
+      {
+        "id": "308",
+        "nombre": "E-Kids Safe",
+        "precio": 350000,
+        "especificaciones": [
+          "Limitador",
+          "Liviana",
+          "Segura"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/riddich-azul-90e5192bf6066b911617497624775818-1024-1024.webp"
+      },
+      {
+        "id": "309",
+        "nombre": "E-MTB Enduro",
+        "precio": 950000,
+        "especificaciones": [
+          "Potente",
+          "Suspensión",
+          "Pro"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/r20naranja-03af0eb9eb0269e97b17497376940944-1024-1024.webp"
+      },
+      {
+        "id": "310",
+        "nombre": "E-City Deluxe",
+        "precio": 600000,
+        "especificaciones": [
+          "Premium",
+          "Cómoda",
+          "Silenciosa"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/img_8941-1ec705024cc82f2bfe17175394185880-1024-1024.webp"
+      }
     ]
   },
-
   {
     "id": 4,
     "nombre": "Bicicletas Urbanas",
-    "fotoUrl": "https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=1000&auto=format&fit=crop",
+    "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/whatsapp-image-2025-01-13-at-19-39-31-229d1b7d57a673842317429072320666-1024-1024.jpeg",
     "productos": [
-      { "id": "401", "nombre": "Urbana Vintage Lady", "precio": 95000, "especificaciones": ["Canasto","7 velocidades","Asiento confort"], "fotoUrl": "https://picsum.photos/seed/u1/400" },
-      { "id": "402", "nombre": "Fixie Track Black", "precio": 110000, "especificaciones": ["Piñón fijo","Acero","Minimalista"], "fotoUrl": "https://picsum.photos/seed/u2/400" },
-      { "id": "403", "nombre": "City Comfort Plus", "precio": 130000, "especificaciones": ["Ergonómica","Shimano","Liviana"], "fotoUrl": "https://picsum.photos/seed/u3/400" },
-      { "id": "404", "nombre": "Urban Classic Man", "precio": 120000, "especificaciones": ["Clásica","Acero","Durable"], "fotoUrl": "https://picsum.photos/seed/u4/400" },
-      { "id": "405", "nombre": "City Folding Bike", "precio": 150000, "especificaciones": ["Plegable","Compacta","Transporte fácil"], "fotoUrl": "https://picsum.photos/seed/u5/400" },
-      { "id": "406", "nombre": "Urban Sport", "precio": 140000, "especificaciones": ["Deportiva","21 vel","Disco"], "fotoUrl": "https://picsum.photos/seed/u6/400" },
-      { "id": "407", "nombre": "Beach Cruiser", "precio": 135000, "especificaciones": ["Ancha","Cómoda","Relax"], "fotoUrl": "https://picsum.photos/seed/u7/400" },
-      { "id": "408", "nombre": "Urban Eco Ride", "precio": 100000, "especificaciones": ["Simple","Ecológica","Ligera"], "fotoUrl": "https://picsum.photos/seed/u8/400" },
-      { "id": "409", "nombre": "City Premium", "precio": 170000, "especificaciones": ["Alta gama","Disco","Confort"], "fotoUrl": "https://picsum.photos/seed/u9/400" },
-      { "id": "410", "nombre": "Urban Student", "precio": 85000, "especificaciones": ["Económica","Práctica","Resistente"], "fotoUrl": "https://picsum.photos/seed/u10/400" }
+      {
+        "id": "401",
+        "nombre": "Urbana Vintage Lady",
+        "precio": 95000,
+        "especificaciones": [
+          "Canasto",
+          "7 velocidades",
+          "Asiento confort"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/pinon-sram-nx-black-85586bab783f74ae0317659209335692-1024-1024.webp"
+      },
+      {
+        "id": "402",
+        "nombre": "Fixie Track Black",
+        "precio": 110000,
+        "especificaciones": [
+          "Piñón fijo",
+          "Acero",
+          "Minimalista"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/raider-r16-azul-gris-26de0f9566096913ed17491432949690-1024-1024-a925929d2293a6496f17658339002371-1024-1024.webp"
+      },
+      {
+        "id": "403",
+        "nombre": "City Comfort Plus",
+        "precio": 130000,
+        "especificaciones": [
+          "Ergonómica",
+          "Shimano",
+          "Liviana"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/rider-14-azul-8c4cef09b95bf36c8617570145981105-1024-1024-9cb6f1f251a290722217655727833184-1024-1024.webp"
+      },
+      {
+        "id": "404",
+        "nombre": "Urban Classic Man",
+        "precio": 120000,
+        "especificaciones": [
+          "Clásica",
+          "Acero",
+          "Durable"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/ca-5ddf6c54bfc1c0978817496814579735-1024-1024.webp"
+      },
+      {
+        "id": "405",
+        "nombre": "City Folding Bike",
+        "precio": 150000,
+        "especificaciones": [
+          "Plegable",
+          "Compacta",
+          "Transporte fácil"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/94926-03_tarmac-sl8-sw-axs-redsky-shdwsil-wht_hero-pdp_dark-281adb44fb56c24c5817616044687913-480-0.webp"
+      },
+      {
+        "id": "406",
+        "nombre": "Urban Sport",
+        "precio": 140000,
+        "especificaciones": [
+          "Deportiva",
+          "21 vel",
+          "Disco"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/93126-00_epic-wc-sw-carb-bluprl-metwhtsil_hero_dark-pdp-92078f66683d1dc5b617617696258498-480-0.webp"
+      },
+      {
+        "id": "407",
+        "nombre": "Beach Cruiser",
+        "precio": 135000,
+        "especificaciones": [
+          "Ancha",
+          "Cómoda",
+          "Relax"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/94926-03_tarmac-sl8-sw-axs-redsky-shdwsil-wht_hero-pdp_dark-281adb44fb56c24c5817616044687913-1024-1024.webp"
+      },
+      {
+        "id": "408",
+        "nombre": "Urban Eco Ride",
+        "precio": 100000,
+        "especificaciones": [
+          "Simple",
+          "Ecológica",
+          "Ligera"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/93126-00_epic-wc-sw-carb-bluprl-metwhtsil_hero_dark-pdp-92078f66683d1dc5b617617696258498-1024-1024.webp"
+      },
+      {
+        "id": "409",
+        "nombre": "City Premium",
+        "precio": 170000,
+        "especificaciones": [
+          "Alta gama",
+          "Disco",
+          "Confort"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/93126-01_epic-wc-sw-metpngrn-ois-lqdmet_hero-square-385eed6e21601088d517616037084112-1024-1024.webp"
+      },
+      {
+        "id": "410",
+        "nombre": "Urban Student",
+        "precio": 85000,
+        "especificaciones": [
+          "Económica",
+          "Práctica",
+          "Resistente"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/img_5772-d62c35fe18364f215117110530361220-1024-1024.webp"
+      }
     ]
   },
   {
     "id": 5,
     "nombre": "Accesorios & Seguridad",
-    "fotoUrl": "https://picsum.photos/seed/acc/800",
+    "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/pinon-sram-gx-negro-8ff305240eb5381bc317659259413064-1024-1024.webp",
     "productos": [
-      { "id": "501", "nombre": "Casco Pro-Ride MIPS", "precio": 18000, "especificaciones": ["Protección","LED","Ventilación"], "fotoUrl": "https://picsum.photos/seed/a1/400" },
-      { "id": "502", "nombre": "Candado U-Lock Blindado", "precio": 12000, "especificaciones": ["Acero","Alta seguridad","Soporte"], "fotoUrl": "https://picsum.photos/seed/a2/400" },
-      { "id": "503", "nombre": "Inflador de Pie Pro", "precio": 9500, "especificaciones": ["Manómetro","Preciso","Acero"], "fotoUrl": "https://picsum.photos/seed/a3/400" },
-      { "id": "504", "nombre": "Luces LED Recargables", "precio": 7000, "especificaciones": ["USB","Alta visibilidad","Compacto"], "fotoUrl": "https://picsum.photos/seed/a4/400" },
-      { "id": "505", "nombre": "Guantes Gel Comfort", "precio": 6000, "especificaciones": ["Antideslizante","Respirable","Ergonómico"], "fotoUrl": "https://picsum.photos/seed/a5/400" },
-      { "id": "506", "nombre": "Gafas Ciclismo UV", "precio": 8000, "especificaciones": ["Protección UV","Livianas","Antiviento"], "fotoUrl": "https://picsum.photos/seed/a6/400" },
-      { "id": "507", "nombre": "Porta Botella Aluminio", "precio": 3500, "especificaciones": ["Ligero","Resistente","Universal"], "fotoUrl": "https://picsum.photos/seed/a7/400" },
-      { "id": "508", "nombre": "Mochila Hidratación", "precio": 14000, "especificaciones": ["2L","Ergonómica","Trail"], "fotoUrl": "https://picsum.photos/seed/a8/400" },
-      { "id": "509", "nombre": "Soporte Celular", "precio": 5000, "especificaciones": ["Universal","Rotación","Firme"], "fotoUrl": "https://picsum.photos/seed/a9/400" },
-      { "id": "510", "nombre": "Espejo Retrovisor", "precio": 4000, "especificaciones": ["Ajustable","Seguro","Compacto"], "fotoUrl": "https://picsum.photos/seed/a10/400" }
+      {
+        "id": "501",
+        "nombre": "Casco Pro-Ride MIPS",
+        "precio": 18000,
+        "especificaciones": [
+          "Protección",
+          "LED",
+          "Ventilación"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/98123-51_creo-sl-comp-carbon-dplake-dplakemet_hero-a9bffd1625cbbd73df17682225289475-1024-1024.webp"
+      },
+      {
+        "id": "502",
+        "nombre": "Candado U-Lock Blindado",
+        "precio": 12000,
+        "especificaciones": [
+          "Acero",
+          "Alta seguridad",
+          "Soporte"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/epic-wc-s-06aaa078d566b5dba417597552018777-1024-1024.webp"
+      },
+      {
+        "id": "503",
+        "nombre": "Inflador de Pie Pro",
+        "precio": 9500,
+        "especificaciones": [
+          "Manómetro",
+          "Preciso",
+          "Acero"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/91326-51_epic-ht-comp-carb-metwhtsil_hero-pdp-b80b0378af9b8d244a17679925399819-1024-1024.webp"
+      },
+      {
+        "id": "504",
+        "nombre": "Luces LED Recargables",
+        "precio": 7000,
+        "especificaciones": [
+          "USB",
+          "Alta visibilidad",
+          "Compacto"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/95426-50_diverge-comp-dlmmet-orgzst_hero-pdp-f932a08f0d06e629b117682209227714-1024-1024.webp"
+      },
+      {
+        "id": "505",
+        "nombre": "Guantes Gel Comfort",
+        "precio": 6000,
+        "especificaciones": [
+          "Antideslizante",
+          "Respirable",
+          "Ergonómico"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/93826-70_chisel-base-redsky-flored_hero-pdp-ae39d2313f2d83870d17679618096485-1024-1024.webp"
+      },
+      {
+        "id": "506",
+        "nombre": "Gafas Ciclismo UV",
+        "precio": 8000,
+        "especificaciones": [
+          "Protección UV",
+          "Livianas",
+          "Antiviento"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/95426-51_diverge-e5-comp-mvemet-obsd_hero-pdp-37dafb05df31ef912617616041394997-1024-1024.webp"
+      },
+      {
+        "id": "507",
+        "nombre": "Porta Botella Aluminio",
+        "precio": 3500,
+        "especificaciones": [
+          "Ligero",
+          "Resistente",
+          "Universal"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/epichardtail_fieryred_01-2-68466754b32609674117172508429217-1024-1024.webp"
+      },
+      {
+        "id": "508",
+        "nombre": "Mochila Hidratación",
+        "precio": 14000,
+        "especificaciones": [
+          "2L",
+          "Ergonómica",
+          "Trail"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/90026-70_allez-e5-comp-cstblumet-dunewht_hero-pdp-f96ebf40e5ce2223dd17700633671544-1024-1024.webp"
+      },
+      {
+        "id": "509",
+        "nombre": "Soporte Celular",
+        "precio": 5000,
+        "especificaciones": [
+          "Universal",
+          "Rotación",
+          "Firme"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/bicicleta_ruta_merida_scultura_rim_4000_2022_1_imagen4-6787faea5308a249cb17277963300784-1024-1024.webp"
+      },
+      {
+        "id": "510",
+        "nombre": "Espejo Retrovisor",
+        "precio": 4000,
+        "especificaciones": [
+          "Ajustable",
+          "Seguro",
+          "Compacto"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/1-130b0205687446fb2a17429951293312-640-0-123ad2d82682daf12217517220893834-1024-1024.webp"
+      }
     ]
   },
   {
     "id": 6,
     "nombre": "Mantenimiento & Herramientas",
-    "fotoUrl": "https://picsum.photos/seed/tools/800",
+    "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/pinon-sram-nx-black-85586bab783f74ae0317659209335692-1024-1024.webp",
     "productos": [
-      { "id": "601", "nombre": "Multiherramienta 15 en 1", "precio": 7500, "especificaciones": ["Allen","Torx","Corta cadena"], "fotoUrl": "https://picsum.photos/seed/t1/400" },
-      { "id": "602", "nombre": "Lubricante de Cadena", "precio": 4500, "especificaciones": ["Teflón","Reduce fricción","120ml"], "fotoUrl": "https://picsum.photos/seed/t2/400" },
-      { "id": "603", "nombre": "Kit Reparación Pinchaduras", "precio": 3000, "especificaciones": ["Parche","Pegamento","Compacto"], "fotoUrl": "https://picsum.photos/seed/t3/400" },
-      { "id": "604", "nombre": "Llave Extractora Cassette", "precio": 5500, "especificaciones": ["Acero","Precisa","Durable"], "fotoUrl": "https://picsum.photos/seed/t4/400" },
-      { "id": "605", "nombre": "Cepillo Limpieza Bike", "precio": 3500, "especificaciones": ["Multiuso","Resistente","Ergonómico"], "fotoUrl": "https://picsum.photos/seed/t5/400" },
-      { "id": "606", "nombre": "Soporte Taller Ajustable", "precio": 25000, "especificaciones": ["Plegable","Altura regulable","Firme"], "fotoUrl": "https://picsum.photos/seed/t6/400" },
-      { "id": "607", "nombre": "Medidor Desgaste Cadena", "precio": 4000, "especificaciones": ["Preciso","Fácil uso","Compacto"], "fotoUrl": "https://picsum.photos/seed/t7/400" },
-      { "id": "608", "nombre": "Llave Allen Profesional", "precio": 6000, "especificaciones": ["Juego completo","Acero","Durable"], "fotoUrl": "https://picsum.photos/seed/t8/400" },
-      { "id": "609", "nombre": "Desmontables Cubiertas", "precio": 2500, "especificaciones": ["Plástico","Resistente","Pack x3"], "fotoUrl": "https://picsum.photos/seed/t9/400" },
-      { "id": "610", "nombre": "Kit Limpieza Premium", "precio": 12000, "especificaciones": ["Completo","Cepillos","Desengrasante"], "fotoUrl": "https://picsum.photos/seed/t10/400" }
+      {
+        "id": "601",
+        "nombre": "Multiherramienta 15 en 1",
+        "precio": 7500,
+        "especificaciones": [
+          "Allen",
+          "Torx",
+          "Corta cadena"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/91826-33_rockhopper-expert-qtzmet-wht_hero-pdp-15f3356cdef0708fe717679931188681-1024-1024.webp"
+      },
+      {
+        "id": "602",
+        "nombre": "Lubricante de Cadena",
+        "precio": 4500,
+        "especificaciones": [
+          "Teflón",
+          "Reduce fricción",
+          "120ml"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/41-4452749cba0be7ea0317525027995652-1024-1024.webp"
+      },
+      {
+        "id": "603",
+        "nombre": "Kit Reparación Pinchaduras",
+        "precio": 3000,
+        "especificaciones": [
+          "Parche",
+          "Pegamento",
+          "Compacto"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/allez_glosssmoke_01-a8a56a776d9ab17e7417446444026120-1024-1024.jpg"
+      },
+      {
+        "id": "604",
+        "nombre": "Llave Extractora Cassette",
+        "precio": 5500,
+        "especificaciones": [
+          "Acero",
+          "Precisa",
+          "Durable"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/whatsapp-image-2025-01-13-at-19-39-31-229d1b7d57a673842317429072320666-1024-1024.jpeg"
+      },
+      {
+        "id": "605",
+        "nombre": "Cepillo Limpieza Bike",
+        "precio": 3500,
+        "especificaciones": [
+          "Multiuso",
+          "Resistente",
+          "Ergonómico"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/rockhoppercomp_fieryred_01-1375ecdf4e5844624617114648246644-1024-1024.webp"
+      },
+      {
+        "id": "606",
+        "nombre": "Soporte Taller Ajustable",
+        "precio": 25000,
+        "especificaciones": [
+          "Plegable",
+          "Altura regulable",
+          "Firme"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/svel-1-scaled-bf7dda6335cbf1ea8017374056020769-1024-1024.webp"
+      },
+      {
+        "id": "607",
+        "nombre": "Medidor Desgaste Cadena",
+        "precio": 4000,
+        "especificaciones": [
+          "Preciso",
+          "Fácil uso",
+          "Compacto"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/venzo-xl-roja-1d7cf92f164e2ea34517595069614030-1024-1024.webp"
+      },
+      {
+        "id": "608",
+        "nombre": "Llave Allen Profesional",
+        "precio": 6000,
+        "especificaciones": [
+          "Juego completo",
+          "Acero",
+          "Durable"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/venzo-xl-roja-2ff99ce47f898521a317595065405780-1024-1024.webp"
+      },
+      {
+        "id": "609",
+        "nombre": "Desmontables Cubiertas",
+        "precio": 2500,
+        "especificaciones": [
+          "Plástico",
+          "Resistente",
+          "Pack x3"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/p1_rustedred_01-282900e21ca53e01bb17359266610052-1024-1024.webp"
+      },
+      {
+        "id": "610",
+        "nombre": "Kit Limpieza Premium",
+        "precio": 12000,
+        "especificaciones": [
+          "Completo",
+          "Cepillos",
+          "Desengrasante"
+        ],
+        "fotoUrl": "https://acdn-us.mitiendanube.com/stores/002/692/526/products/venzoxlverde1-04f66908ce3ab7414f17595064902183-1024-1024.webp"
+      }
     ]
   }
 ]

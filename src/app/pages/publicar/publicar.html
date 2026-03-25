@@ -1,0 +1,126 @@
+<div class="publicar-wrapper">
+  @if (!esCliente) {
+    <div class="publicar-card acceso-denegado">
+      <h2>Acceso restringido</h2>
+      <p>Solo el cliente puede cargar publicaciones.</p>
+      <button class="btn-base btn-primario" routerLink="/perfil">Ir a iniciar sesión</button>
+    </div>
+  }
+
+  @if (esCliente) {
+    <section class="publicar-hero">
+      <div>
+        <p class="eyebrow">Publicaciones</p>
+        <h1>Subí tu producto y seguí su estado sin perderte</h1>
+        <p class="hero-copy">Completá los datos una sola vez. El admin lo revisa y, si lo aprueba, pasa al catálogo.</p>
+      </div>
+
+      <div class="publicar-kpis">
+        <article class="kpi-card kpi-user">
+          <span class="kpi-label">Cuenta activa</span>
+          <strong>{{ emailCliente }}</strong>
+        </article>
+        <article class="kpi-card kpi-warn">
+          <span class="kpi-label">Pendientes</span>
+          <strong>{{ misPublicacionesPendientes.length }}</strong>
+        </article>
+        <article class="kpi-card kpi-ok">
+          <span class="kpi-label">Aprobadas</span>
+          <strong>{{ misPublicacionesAprobadas.length }}</strong>
+        </article>
+        <article class="kpi-card kpi-muted">
+          <span class="kpi-label">Total</span>
+          <strong>{{ totalPublicaciones }}</strong>
+        </article>
+      </div>
+    </section>
+
+    <div class="publicar-card publicar-form-card">
+      <div class="section-head">
+        <div>
+          <h2>Publicar producto</h2>
+          <p class="texto-secundario">Cargá información clara para que el admin pueda revisarla rápido.</p>
+        </div>
+        <span class="section-badge">Revisión manual</span>
+      </div>
+
+      @if (publicada) {
+        <p class="mensaje-exito">La publicación fue enviada para revisión del admin.</p>
+      }
+
+      <div class="form-grid">
+        <div class="form-grupo form-grupo-doble">
+          <label>Nombre del producto</label>
+          <input type="text" [(ngModel)]="nombrePublicacion" placeholder="Ej: Bicicleta Urbana Rodado 29" />
+        </div>
+
+        <div class="form-grupo">
+          <label>Precio</label>
+          <input type="number" [(ngModel)]="precioPublicacion" placeholder="Ej: 180000" />
+        </div>
+
+        <div class="form-grupo">
+          <label>Categoría</label>
+          <select [(ngModel)]="categoriaPublicacion">
+            @for (categoria of categorias; track categoria.id) {
+              <option [value]="categoria.id">{{ categoria.nombre }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="form-grupo form-grupo-doble">
+          <label>URL de foto</label>
+          <input type="url" [(ngModel)]="fotoPublicacion" placeholder="https://..." />
+        </div>
+
+        <div class="form-grupo form-grupo-doble">
+          <label>Especificaciones</label>
+          <textarea [(ngModel)]="specsPublicacion" rows="4" placeholder="Ej: Cuadro de aluminio, 21 velocidades, freno a disco"></textarea>
+          <p class="campo-ayuda">Separalas con coma para que se vean ordenadas en la ficha del producto.</p>
+        </div>
+      </div>
+
+      @if (errorPublicacion) {
+        <p class="mensaje-error">{{ errorPublicacion }}</p>
+      }
+
+      <div class="acciones-formulario">
+        <button class="btn-base btn-primario" (click)="publicarProducto()">Enviar publicación</button>
+      </div>
+    </div>
+
+    <div class="publicar-card">
+      <div class="section-head">
+        <div>
+          <h2>Mis publicaciones</h2>
+          <p class="texto-secundario">Acá ves rápidamente en qué estado está cada producto que subiste.</p>
+        </div>
+        <span class="section-badge section-badge-muted">{{ totalPublicaciones }} cargadas</span>
+      </div>
+
+      @if (misPublicacionesPendientes.length === 0 && misPublicacionesAprobadas.length === 0) {
+        <p class="texto-secundario">Todavía no publicaste productos.</p>
+      }
+
+      @for (producto of misPublicacionesPendientes; track producto.id) {
+        <div class="fila-publicacion">
+          <div class="fila-contenido">
+            <span class="titulo-publicacion">{{ producto.nombre }}</span>
+            <span class="meta-publicacion">En revisión por el administrador</span>
+          </div>
+          <span class="estado pendiente">Pendiente</span>
+        </div>
+      }
+
+      @for (producto of misPublicacionesAprobadas; track producto.id) {
+        <div class="fila-publicacion">
+          <div class="fila-contenido">
+            <span class="titulo-publicacion">{{ producto.nombre }}</span>
+            <span class="meta-publicacion">Ya está visible en el catálogo</span>
+          </div>
+          <span class="estado aprobado">Aprobado</span>
+        </div>
+      }
+    </div>
+  }
+</div>

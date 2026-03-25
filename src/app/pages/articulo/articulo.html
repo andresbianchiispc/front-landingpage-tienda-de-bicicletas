@@ -6,8 +6,49 @@
 
   <div class="col-der">
     <span class="badge-disponible">Stock Disponible</span>
+
+    @if (esAdmin && !editando) {
+      <div class="acciones-admin-detalle">
+        <button class="btn-admin-editar" (click)="iniciarEdicion()">Editar producto</button>
+        <button class="btn-admin-cancelar" (click)="ocultarProducto()">Eliminar del catálogo</button>
+      </div>
+    }
+
     <h1>{{ producto.nombre }}</h1>
     <span class="precio-grande">${{ producto.precio | number:'1.0-0' }}</span>
+
+    @if (producto.publicadoPor) {
+      <p class="meta-publicacion">Publicado por {{ producto.publicadoPor }}</p>
+    }
+
+    @if (esVistaAdminPendiente) {
+      <p class="meta-publicacion">Vista previa de administrador. Esta publicación todavía no está visible en el catálogo.</p>
+    }
+
+    @if (esAdmin && editando) {
+      <div class="editor-admin-box">
+        <div class="form-grupo-admin">
+          <label>Nombre</label>
+          <input type="text" [(ngModel)]="nombreEdicion">
+        </div>
+        <div class="form-grupo-admin">
+          <label>Precio</label>
+          <input type="number" [(ngModel)]="precioEdicion">
+        </div>
+        <div class="form-grupo-admin">
+          <label>Foto</label>
+          <input type="url" [(ngModel)]="fotoEdicion">
+        </div>
+        <div class="form-grupo-admin">
+          <label>Especificaciones</label>
+          <textarea rows="3" [(ngModel)]="specsEdicion"></textarea>
+        </div>
+        <div class="acciones-admin-editor">
+          <button class="btn-admin-guardar" (click)="guardarEdicion()">Guardar cambios</button>
+          <button class="btn-admin-cancelar" (click)="cancelarEdicion()">Cancelar</button>
+        </div>
+      </div>
+    }
     
     <div class="specs-box" [class.expandido]="mostrarSpecs">
       <h3>Ficha Técnica</h3>
@@ -23,15 +64,17 @@
       </div>
     </div>
 
-    <div class="acciones">
-      <button class="btn-comprar" [class.agregado]="agregado" (click)="agregarAlCarrito()">
-        @if (agregado) { ✓ Agregado al carrito } @else { 🛒 Agregar al carrito }
-      </button>
-      <a [href]="'https://wa.me/5493510000000?text=Hola! Me interesa la bici ' + producto.nombre" 
-         target="_blank" class="btn-whatsapp">
-         💬 Consultar por WhatsApp
-      </a>
-    </div>
+    @if (!esVistaAdminPendiente) {
+      <div class="acciones">
+        <button class="btn-comprar" [class.agregado]="agregado" (click)="agregarAlCarrito()">
+          @if (agregado) { ✓ Agregado al carrito } @else { 🛒 Agregar al carrito }
+        </button>
+        <a [href]="'https://wa.me/5493510000000?text=Hola! Me interesa la bici ' + producto.nombre" 
+           target="_blank" class="btn-whatsapp">
+           💬 Consultar por WhatsApp
+        </a>
+      </div>
+    }
   </div>
 </div>
 }
