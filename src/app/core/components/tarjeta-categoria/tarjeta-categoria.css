@@ -1,29 +1,48 @@
 div {
-    height: 220px; /* Un poquito más de aire para que luzca la bici */
+    height: 240px; 
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--color-bg-secondary);
     
-    /* El truco del texto: sombra fuerte y borde sutil */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); 
-    
-    /* Estética de tarjeta moderna */
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     margin: 10px;
-    transition: all 0.3s ease-in-out;
-    
-    /* Capa oscura suave para que la foto no "mate" al texto */
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
     cursor: pointer;
+    box-shadow: var(--shadow-soft);
+    transition: all var(--transition-normal);
+}
+
+div::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+    transition: background var(--transition-normal);
+    z-index: 1;
+}
+
+div:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+}
+
+div:hover::before {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
 }
 
 h3 {
-    font-size: 1.8rem;
-    font-weight: 800;
+    position: relative;
+    z-index: 2;
+    font-size: 1.6rem;
+    font-weight: 700;
     text-transform: uppercase;
     text-align: center;
-    padding: 0 15px;
+    letter-spacing: 1px;
+    padding: 0 20px;
+    text-shadow: 0 2px 15px rgba(0,0,0,0.8);
+    color: var(--color-bg-secondary);
 }

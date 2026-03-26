@@ -1,12 +1,76 @@
 <section class="home-wrapper">
-    <h2>Nuestras Categorías</h2>
-    
-    <div id="categorias-container">
-        @for (cat of categorias; track cat.id) {
-            <app-tarjeta-categoria 
-                [categoria]="cat" 
-                [routerLink]="['/categoria', cat.id]">
-            </app-tarjeta-categoria>
-        }
+    <header class="home-hero-minimal">
+        <div class="hero-content">
+            <h1>Nuestro Catálogo</h1>
+            <p>Ingeniería de alto rendimiento diseñada para la aventura. Explorá nuestra selección de bicicletas de alta precisión.</p>
+        </div>
+    </header>
+
+    <div class="home-container">
+        <!-- Barra Sticky de Filtros -->
+        <nav class="filtros-sticky" id="filtros-bar">
+            
+            <!-- Botón Hamburguesa de Filtros (Solo Móvil) -->
+            <button class="btn-hamburger-filtros" (click)="toggleMenuFiltros()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" y1="6" x2="20" y2="6"></line>
+                    <line x1="4" y1="12" x2="20" y2="12"></line>
+                    <line x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+                <span>Filtro: <strong>{{ nombreCategoriaActual }}</strong></span>
+            </button>
+
+            <!-- Lista de Filtros -->
+            <div class="filtros-lista" [class.abierto]="menuFiltrosAbierto">
+                <button 
+                   class="btn-filtro" 
+                   [class.activo]="categoriaSeleccionada === null"
+                   (click)="filtrarPorCategoria(null, $event)">
+                   Todo el Catálogo
+                </button>
+                @for (cat of categorias; track cat.id) {
+                    <button 
+                       class="btn-filtro" 
+                       [class.activo]="categoriaSeleccionada === cat.id"
+                       (click)="filtrarPorCategoria(cat.id, $event)">
+                       {{ cat.nombre }}
+                    </button>
+                }
+            </div>
+        </nav>
+
+        <!-- Grilla de Productos Filtrados -->
+        <div class="productos-container">
+            @if (productosFiltrados.length === 0) {
+                <div class="estado-vacio">
+                    <span class="icono-grande">🚲</span>
+                    <p>No hay productos disponibles en esta categoría aún.</p>
+                </div>
+            }
+            @for (prod of productosFiltrados; track prod.id) {
+                <div class="producto-card" [routerLink]="['/articulo', prod.id]">
+                    <div class="carousel-wrapper" #tarjeta>
+                    <button class="btn-carousel prev" (click)="scrollGaleria(tarjeta, -1, $event)">❮</button>
+                    <button class="btn-carousel next" (click)="scrollGaleria(tarjeta, 1, $event)">❯</button>
+                    <div class="carousel-track">
+                        <img [src]="prod.fotoUrl" class="producto-img" [alt]="prod.nombre">
+                        <img [src]="prod.fotoUrl" class="producto-img flipped" [alt]="prod.nombre">
+                        <img [src]="prod.fotoUrl" class="producto-img detail" [alt]="prod.nombre">
+                    </div>
+                </div>
+                    <div class="info-body">
+                        <div class="info-content">
+                            <h4>{{ prod.nombre }}</h4>
+                            <p class="precio">${{ prod.precio | number:'1.0-0' }}</p>
+                        </div>
+                    </div>
+                    <div class="acciones-card">
+                        <button class="btn-comprar">
+                            Ver Detalle
+                        </button>
+                    </div>
+                </div>
+            }
+        </div>
     </div>
 </section>

@@ -1,43 +1,347 @@
-/* Estilo para el título principal */
-h2 {
-    text-align: center;
-    color: #333;
-    text-transform: uppercase;
-    font-size: 2rem;
-    margin-top: 30px;
-    margin-bottom: 10px;
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-primary);
+  min-height: 100vh;
+}
+
+/* --- Hero Minimalista Premium --- */
+.home-hero-minimal {
+  text-align: left;
+  padding: 60px 24px 20px;
+  background: var(--color-bg-primary);
+  max-width: 1248px;
+  margin: 0 auto;
+}
+
+.hero-content {
+  max-width: 650px;
+  animation: fadeInUp 0.8s ease backwards;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  color: #111;
+  margin: 0 0 16px 0;
+}
+
+.hero-content p {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0;
+  max-width: 600px;
+}
+
+.home-container {
+  padding: 0 24px 80px;
+  max-width: 1248px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Barra Sticky de Filtros */
+.filtros-sticky {
+  position: sticky;
+  top: 92px; /* Alineado exacto al header principal desktop */
+  z-index: 100;
+  background: var(--color-bg-primary);
+  padding: 16px 0;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.filtros-sticky::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: var(--color-bg-primary);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.btn-hamburger-filtros {
+  display: none; /* Hide default on desktop */
+}
+
+.filtros-lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.btn-filtro {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  letter-spacing: 0.5px;
+}
+
+.btn-filtro:hover {
+  border-color: var(--color-text-main);
+  color: var(--color-text-main);
+}
+
+.btn-filtro.activo {
+  background: var(--color-text-main);
+  color: var(--color-bg-secondary);
+  border-color: var(--color-text-main);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Contenedor de Productos Filtrados */
+.productos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.producto-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  cursor: pointer;
+  animation: fadeInUp 0.4s ease backwards;
+}
+
+.producto-card:hover {
+  box-shadow: var(--shadow-soft);
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: var(--color-bg-primary);
+}
+
+.btn-carousel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-bg-primary);
+  border: none;
+  color: var(--color-text-main);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  z-index: 10;
+  transition: all var(--transition-fast);
+  opacity: 0.7;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn-carousel.prev {
+  left: 12px;
+}
+
+.btn-carousel.next {
+  right: 12px;
+}
+
+.btn-carousel:hover {
+  background: var(--color-text-main);
+  color: var(--color-bg-primary);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.producto-img {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 28px;
+  box-sizing: border-box;
+  transition: transform 0.4s ease;
+}
+
+.producto-img.flipped {
+  transform: scaleX(-1);
+}
+
+.producto-img.detail {
+  object-fit: cover;
+  transform: scale(1.3);
+}
+
+.info-body {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-content h4 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.precio {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  margin: 0;
+}
+
+.acciones-card {
+  padding: 20px;
+  padding-top: 0;
+}
+
+.btn-comprar {
+  width: 100%;
+  background: var(--color-bg-secondary);
+  color: var(--color-text-main);
+  border: 1px solid var(--color-border);
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  letter-spacing: 0.5px;
+}
+
+.producto-card:hover .btn-comprar {
+  background: var(--color-text-main);
+  color: var(--color-bg-secondary);
+  border-color: var(--color-text-main);
+}
+
+.estado-vacio {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--color-text-muted);
+}
+
+.icono-grande {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .home-wrapper {
+    padding: 0 0 40px;
+  }
+  .productos-container {
+    padding: 0 16px;
+  }
+  .home-hero-minimal {
+    padding: 60px 16px 40px;
+  }
+  .hero-content h1 {
+    font-size: 2.8rem;
     letter-spacing: -1px;
+    margin-bottom: 16px;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .filtros-sticky {
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-hamburger-filtros {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: 1px solid var(--color-border);
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .filtros-lista {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .filtros-lista.abierto {
+    display: flex;
+  }
+
+  .btn-filtro {
+    width: 100%;
+    text-align: left;
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
 }
 
-/* Una línea decorativa debajo del h2 */
-h2::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: #ffcc00; /* El amarillo clásico de las bicis */
-    margin: 10px auto;
-    border-radius: 2px;
-}
-
-/* El contenedor de las tarjetas */
-#categorias-container {
-    display: grid; /* Cambiamos flex por grid para mejor alineación */
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto; /* Centra todo el bloque */
-}
-
-/* Animación para que las categorías "aparezcan" al cargar */
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
 }

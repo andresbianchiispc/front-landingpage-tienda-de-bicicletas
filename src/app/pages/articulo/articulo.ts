@@ -31,6 +31,21 @@ export class Articulo implements OnInit, OnDestroy {
   specsEdicion = '';
   esVistaAdminPendiente = false;
 
+  imagenActual: number = 0;
+  modalImagenAbierto: boolean = false;
+
+  cambiarImagen(index: number) {
+    this.imagenActual = index;
+  }
+
+  abrirModalImagen() {
+    this.modalImagenAbierto = true;
+  }
+
+  cerrarModalImagen() {
+    this.modalImagenAbierto = false;
+  }
+
   ngOnInit() {
     this.route.params.subscribe(async (params) => {
       const id = Number(params['id']);

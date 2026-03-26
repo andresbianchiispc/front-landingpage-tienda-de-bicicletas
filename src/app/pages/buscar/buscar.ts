@@ -22,13 +22,14 @@ export class Buscar implements OnInit {
   textoBusqueda: string = '';
   resultados: { producto: Producto; categoria: string }[] = [];
   todosBuscables: { producto: Producto; categoria: string }[] = [];
+  categorias: Categoria[] = [];
   buscando: boolean = false;
 
   async ngOnInit() {
     this.headerService.titulo.set('Buscar');
-    const categorias: Categoria[] = await this.categoriasService.getAll();
+    this.categorias = await this.categoriasService.getAll();
     // Armamos una lista plana de todos los productos con su categoría
-    for (const cat of categorias) {
+    for (const cat of this.categorias) {
       for (const prod of cat.productos) {
         this.todosBuscables.push({ producto: prod, categoria: cat.nombre });
       }

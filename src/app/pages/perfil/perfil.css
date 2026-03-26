@@ -1,60 +1,61 @@
 .perfil-wrapper {
-  --panel-bg: #ffffff;
-  --panel-border: #dde7f4;
-  --panel-shadow: 0 20px 42px rgba(16, 24, 40, 0.08);
-  --text-strong: #14213d;
-  --text-soft: #5c667a;
-  --brand: #183153;
-  --brand-soft: #ecf2ff;
+  --panel-bg: var(--color-bg-secondary);
+  --panel-border: var(--color-border);
+  --panel-shadow: var(--shadow-soft);
+  --text-strong: var(--color-text-main);
+  --text-soft: var(--color-text-muted);
+  --brand: var(--color-accent);
+  --brand-soft: var(--color-bg-primary);
   --error-bg: #fff1ef;
   --error-text: #c63c2f;
-  padding: 22px 16px 40px;
+  padding: 30px 20px 60px;
   max-width: 920px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 24px;
 }
 
 .perfil-hero {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 22px;
-  border-radius: 24px;
+  gap: 12px;
+  padding: 30px;
+  border-radius: var(--radius-md);
   background:
-    radial-gradient(circle at top left, rgba(143, 195, 255, 0.35), transparent 35%),
-    linear-gradient(135deg, #f9fbff 0%, #eef4ff 100%);
-  border: 1px solid #d9e6ff;
+    radial-gradient(circle at top left, rgba(0, 230, 118, 0.15), transparent 40%),
+    linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+  border: 1px solid var(--color-border);
 }
 
 .eyebrow {
-  margin: 0 0 8px;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  margin: 0 0 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: #4267b2;
+  color: var(--color-accent);
 }
 
 .perfil-hero h1 {
   margin: 0;
-  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
-  line-height: 1.1;
+  font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.2;
   color: var(--text-strong);
 }
 
 .hero-copy {
-  margin: 10px 0 0;
-  max-width: 56ch;
+  margin: 12px 0 0;
+  max-width: 60ch;
   color: var(--text-soft);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .perfil-card {
   background: var(--panel-bg);
-  border-radius: 22px;
-  padding: 22px;
+  border-radius: var(--radius-md);
+  padding: 30px;
   border: 1px solid var(--panel-border);
   box-shadow: var(--panel-shadow);
 }
@@ -62,94 +63,98 @@
 .perfil-card-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
 .card-header h2 {
   margin: 0;
-  font-size: 1.12rem;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: var(--text-strong);
 }
 
 .texto-secundario {
-  margin: 6px 0 0;
+  margin: 8px 0 0;
   color: var(--text-soft);
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  gap: 20px;
 }
 
 .form-grupo {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .form-grupo label {
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
-  color: #62718b;
-  font-weight: 800;
-  letter-spacing: 0.04em;
+  color: var(--text-soft);
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .form-grupo input {
-  border: 1px solid #d4dbe7;
-  border-radius: 14px;
-  padding: 12px 14px;
-  font-size: 0.96rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-size: 1rem;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: all var(--transition-fast);
   font-family: inherit;
-  background: #fbfcfe;
+  background: var(--color-bg-primary);
+  color: var(--text-strong);
 }
 
 .form-grupo input:focus {
-  border-color: #6f9dff;
-  box-shadow: 0 0 0 4px rgba(111, 157, 255, 0.16);
+  border-color: var(--text-strong);
 }
 
 .mensaje-estado {
   margin: 0;
-  padding: 12px 14px;
-  border-radius: 14px;
-  font-size: 0.9rem;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
 }
 
 .mensaje-error {
   background: var(--error-bg);
   color: var(--error-text);
+  border: 1px solid rgba(198, 60, 47, 0.2);
 }
 
 .acciones-formulario {
   display: flex;
   justify-content: flex-start;
+  margin-top: 10px;
 }
 
 .btn-base {
   border: none;
-  border-radius: 12px;
-  padding: 12px 16px;
-  font-size: 0.82rem;
-  font-weight: 800;
+  border-radius: var(--radius-md);
+  padding: 16px 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
   cursor: pointer;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  transition: transform 0.16s ease, box-shadow 0.16s ease;
-}
-
-.btn-base:hover {
-  transform: translateY(-1px);
+  letter-spacing: 0.5px;
+  transition: all var(--transition-fast);
 }
 
 .btn-primario {
   background: var(--brand);
-  color: #f7fbff;
-  box-shadow: 0 10px 20px rgba(24, 49, 83, 0.18);
+  color: #111;
+}
+
+.btn-primario:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 230, 118, 0.3);
 }
 
 @media (max-width: 720px) {
@@ -159,6 +164,14 @@
 
   .acciones-formulario .btn-base {
     width: 100%;
+  }
+
+  .perfil-hero {
+    padding: 24px;
+  }
+  
+  .perfil-card {
+    padding: 24px;
   }
 }
 

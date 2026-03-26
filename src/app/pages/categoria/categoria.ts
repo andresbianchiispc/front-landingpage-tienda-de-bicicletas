@@ -138,4 +138,13 @@ export class Categoria implements OnInit, OnDestroy {
     this.headerService.ocultarProducto(producto);
     this.productos = this.productos.filter((item) => item.id !== producto.id);
   }
+
+  scrollGaleria(wrapper: HTMLElement, direccion: number, event: Event) {
+    event.preventDefault();
+    event.stopPropagation();
+    const track = wrapper.querySelector('.carousel-track') as HTMLElement;
+    if (track) {
+      track.scrollBy({ left: direccion * track.clientWidth, behavior: 'smooth' });
+    }
+  }
 }

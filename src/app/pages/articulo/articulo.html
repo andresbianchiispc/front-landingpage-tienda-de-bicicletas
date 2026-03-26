@@ -1,7 +1,22 @@
 @if (producto) {
 <div class="articulo-container">
-  <div class="col-izq">
-    <img [src]="producto.fotoUrl" [alt]="producto.nombre">
+  <div class="col-izq col-izq-catalogo">
+    <div class="galeria-visor" (click)="abrirModalImagen()" style="cursor: zoom-in;" title="Ampliar imagen">
+        <img [src]="producto.fotoUrl" [alt]="producto.nombre" class="img-main"
+             [class.flipped]="imagenActual === 1"
+             [class.detail]="imagenActual === 2">
+    </div>
+    <div class="galeria-miniaturas">
+      <div class="miniatura-wrapper" [class.activa]="imagenActual === 0" (click)="cambiarImagen(0)">
+        <img [src]="producto.fotoUrl" [alt]="producto.nombre">
+      </div>
+      <div class="miniatura-wrapper" [class.activa]="imagenActual === 1" (click)="cambiarImagen(1)">
+        <img [src]="producto.fotoUrl" class="flipped" [alt]="producto.nombre">
+      </div>
+      <div class="miniatura-wrapper" [class.activa]="imagenActual === 2" (click)="cambiarImagen(2)">
+        <img [src]="producto.fotoUrl" class="detail" [alt]="producto.nombre">
+      </div>
+    </div>
   </div>
 
   <div class="col-der">
@@ -77,4 +92,14 @@
     }
   </div>
 </div>
+
+  @if (modalImagenAbierto) {
+    <div class="modal-imagen-overlay" (click)="cerrarModalImagen()">
+      <button class="btn-cerrar-modal" (click)="cerrarModalImagen()">✕</button>
+      <img [src]="producto.fotoUrl" [alt]="producto.nombre" class="img-maximizada" 
+           [class.flipped]="imagenActual === 1"
+           [class.detail]="imagenActual === 2"
+           (click)="$event.stopPropagation()">
+    </div>
+  }
 }

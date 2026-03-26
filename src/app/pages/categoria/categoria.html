@@ -2,8 +2,14 @@
     <div class="productos-container">
         @for (prod of productos; track prod.id) {
         <div class="producto-card">
-            <div class="img-wrapper">
-                <img [src]="prod.fotoUrl" class="producto-img" [alt]="prod.nombre">
+            <div class="carousel-wrapper" #tarjeta>
+                <button class="btn-carousel prev" (click)="scrollGaleria(tarjeta, -1, $event)">❮</button>
+                <button class="btn-carousel next" (click)="scrollGaleria(tarjeta, 1, $event)">❯</button>
+                <div class="carousel-track">
+                    <img [src]="prod.fotoUrl" class="producto-img" [alt]="prod.nombre">
+                    <img [src]="prod.fotoUrl" class="producto-img flipped" [alt]="prod.nombre">
+                    <img [src]="prod.fotoUrl" class="producto-img detail" [alt]="prod.nombre">
+                </div>
             </div>
 
             @if (productoEditandoId === prod.id) {

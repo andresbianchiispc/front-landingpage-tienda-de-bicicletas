@@ -16,6 +16,15 @@
   </div>
 
   @if (!textoBusqueda) {
+    <div class="explorar-categorias">
+      <h3>Explorar Categorías</h3>
+      <div class="categorias-tags">
+        @for (cat of categorias; track cat.id) {
+          <a class="categoria-tag" [routerLink]="['/categoria', cat.id]">{{ cat.nombre }}</a>
+        }
+      </div>
+    </div>
+
     <div class="estado-vacio">
       <span class="icono-grande">🔍</span>
       <p>Escribí para buscar entre todos nuestros productos</p>
