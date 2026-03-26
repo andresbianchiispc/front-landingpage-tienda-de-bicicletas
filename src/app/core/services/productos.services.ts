@@ -19,6 +19,32 @@ export class ProductosServices {
     return !this.headerService.esProductoOculto(productoId);
   }
 
+  async getAll(): Promise<Producto[]> {
+    try {
+      const res = await fetch(this.JSON_URL);
+      const data = await res.json();
+      const categorias: Categoria[] = data.categorias || data;
+      let todos: Producto[] = [];
+      
+      for (const cat of categorias) {
+        if (cat.productos) {
+          todos = [...todos, ...cat.productos.map(p => ({...p, id: Number(p.id)}))];
+        }
+      }
+
+      const publicacionesUsuario = this.headerService.publicacionesAprobadas();
+      
+      const productosVisibles = [...publicacionesUsuario, ...todos]
+        .map(producto => this.aplicarEdicion(producto))
+        .filter(producto => this.esVisible(producto.id));
+
+      return productosVisibles;
+    } catch(e) {
+      console.error(e);
+      return [];
+    }
+  }
+
   // 1. Obtener productos de una categoría específica
   async getByCategoria(id: number): Promise<Producto[]> {
     const res = await fetch(this.JSON_URL);

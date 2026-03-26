@@ -1,4 +1,41 @@
-<section class="home-wrapper">
+<div class="kinetic-layout">
+  <!-- LEFT SIDEBAR -->
+  <aside class="kinetic-sidebar" [class.abierto]="menuFiltrosAbierto">
+    <div class="sidebar-header">
+      <h3>Filtros Técnicos</h3>
+      <p>PRECISIÓN EN CADA COMPONENTE</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <button 
+         class="nav-item" 
+         [class.active]="categoriaSeleccionada === null"
+         (click)="filtrarPorCategoria(null, $event)">
+         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+         <span>TODO EL CATÁLOGO</span>
+      </button>
+      @for (cat of categorias; track cat.id) {
+        <button 
+           class="nav-item" 
+           [class.active]="categoriaSeleccionada === cat.id"
+           (click)="filtrarPorCategoria(cat.id, $event)">
+           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+           <span>{{ cat.nombre | uppercase }}</span>
+        </button>
+      }
+    </nav>
+
+    <div class="sidebar-section">
+      <h4>MARCAS</h4>
+      <label class="mock-checkbox"><input type="checkbox" disabled checked> Specialized</label>
+      <label class="mock-checkbox"><input type="checkbox" disabled> Trek</label>
+      <label class="mock-checkbox"><input type="checkbox" disabled> Canyon</label>
+      <label class="mock-checkbox"><input type="checkbox" disabled> Giant</label>
+    </div>
+  </aside>
+
+  <!-- RIGHT MAIN CONTENT -->
+  <main class="kinetic-main">
     <header class="home-hero-minimal">
         <div class="hero-content">
             <h1>Nuestro Catálogo</h1>
@@ -6,71 +43,44 @@
         </div>
     </header>
 
-    <div class="home-container">
-        <!-- Barra Sticky de Filtros -->
-        <nav class="filtros-sticky" id="filtros-bar">
-            
-            <!-- Botón Hamburguesa de Filtros (Solo Móvil) -->
-            <button class="btn-hamburger-filtros" (click)="toggleMenuFiltros()">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="4" y1="6" x2="20" y2="6"></line>
-                    <line x1="4" y1="12" x2="20" y2="12"></line>
-                    <line x1="4" y1="18" x2="20" y2="18"></line>
-                </svg>
-                <span>Filtro: <strong>{{ nombreCategoriaActual }}</strong></span>
-            </button>
-
-            <!-- Lista de Filtros -->
-            <div class="filtros-lista" [class.abierto]="menuFiltrosAbierto">
-                <button 
-                   class="btn-filtro" 
-                   [class.activo]="categoriaSeleccionada === null"
-                   (click)="filtrarPorCategoria(null, $event)">
-                   Todo el Catálogo
-                </button>
-                @for (cat of categorias; track cat.id) {
-                    <button 
-                       class="btn-filtro" 
-                       [class.activo]="categoriaSeleccionada === cat.id"
-                       (click)="filtrarPorCategoria(cat.id, $event)">
-                       {{ cat.nombre }}
-                    </button>
-                }
-            </div>
-        </nav>
-
-        <!-- Grilla de Productos Filtrados -->
-        <div class="productos-container">
-            @if (productosFiltrados.length === 0) {
-                <div class="estado-vacio">
-                    <span class="icono-grande">🚲</span>
-                    <p>No hay productos disponibles en esta categoría aún.</p>
-                </div>
-            }
-            @for (prod of productosFiltrados; track prod.id) {
-                <div class="producto-card" [routerLink]="['/articulo', prod.id]">
-                    <div class="carousel-wrapper" #tarjeta>
-                    <button class="btn-carousel prev" (click)="scrollGaleria(tarjeta, -1, $event)">❮</button>
-                    <button class="btn-carousel next" (click)="scrollGaleria(tarjeta, 1, $event)">❯</button>
-                    <div class="carousel-track">
-                        <img [src]="prod.fotoUrl" class="producto-img" [alt]="prod.nombre">
-                        <img [src]="prod.fotoUrl" class="producto-img flipped" [alt]="prod.nombre">
-                        <img [src]="prod.fotoUrl" class="producto-img detail" [alt]="prod.nombre">
-                    </div>
-                </div>
-                    <div class="info-body">
-                        <div class="info-content">
-                            <h4>{{ prod.nombre }}</h4>
-                            <p class="precio">${{ prod.precio | number:'1.0-0' }}</p>
-                        </div>
-                    </div>
-                    <div class="acciones-card">
-                        <button class="btn-comprar">
-                            Ver Detalle
-                        </button>
-                    </div>
-                </div>
-            }
-        </div>
+    <div class="btn-hamburger-filtros" (click)="toggleMenuFiltros()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
+      <span>Filtros ({{ nombreCategoriaActual }})</span>
     </div>
-</section>
+
+    <div class="productos-container">
+      @if (productosFiltrados.length === 0) {
+        <div class="estado-vacio">
+            <span class="icono-grande">🚲</span>
+            <p>No hay productos disponibles en esta categoría aún.</p>
+        </div>
+      }
+      @for (prod of productosFiltrados; track prod.id) {
+          <div class="producto-card" [routerLink]="['/articulo', prod.id]">
+              <div class="carousel-wrapper" #tarjeta>
+              
+              @if (prod.precio > 200000) {
+                <span class="card-label label-blue">CARBON T800</span>
+              } @else {
+                <span class="card-label label-orange">LIMITED EDITION</span>
+              }
+              
+              <button class="btn-carousel prev" (click)="scrollGaleria(tarjeta, -1, $event)">❮</button>
+              <button class="btn-carousel next" (click)="scrollGaleria(tarjeta, 1, $event)">❯</button>
+              <div class="carousel-track">
+                  <img [src]="prod.fotoUrl" class="producto-img" [alt]="prod.nombre">
+                  <img [src]="prod.fotoUrl" class="producto-img flipped" [alt]="prod.nombre">
+                  <img [src]="prod.fotoUrl" class="producto-img detail" [alt]="prod.nombre">
+              </div>
+          </div>
+              <div class="info-body">
+                  <div class="info-content">
+                      <h4>{{ prod.nombre }}</h4>
+                      <p class="precio">${{ prod.precio | number:'1.0-0' }}</p>
+                  </div>
+              </div>
+          </div>
+      }
+    </div>
+  </main>
+</div>

@@ -14,21 +14,38 @@
 }
 
 .producto-card {
-    background: var(--color-bg-secondary);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    box-shadow: var(--shadow-soft);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    transition: all var(--transition-normal);
-    position: relative;
-    border: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+  height: 100%;
+  cursor: pointer;
 }
 
 .producto-card:hover {
-    box-shadow: var(--shadow-soft);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.06);
 }
+
+/* Floating Badge */
+.card-label {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 20;
+}
+
+.label-blue { color: var(--color-accent); }
+.label-orange { color: #f97316; }
 
 .carousel-wrapper {
   position: relative;

@@ -1,8 +1,13 @@
 <div class="container-fluido">
     <div class="productos-container">
         @for (prod of productos; track prod.id) {
-        <div class="producto-card">
+        <div class="producto-card" [routerLink]="['/articulo', prod.id]">
             <div class="carousel-wrapper" #tarjeta>
+                @if (prod.precio > 200000) {
+                  <span class="card-label label-blue">CARBON T800</span>
+                } @else {
+                  <span class="card-label label-orange">LIMITED EDITION</span>
+                }
                 <button class="btn-carousel prev" (click)="scrollGaleria(tarjeta, -1, $event)">❮</button>
                 <button class="btn-carousel next" (click)="scrollGaleria(tarjeta, 1, $event)">❯</button>
                 <div class="carousel-track">
@@ -13,7 +18,7 @@
             </div>
 
             @if (productoEditandoId === prod.id) {
-            <div class="admin-editor">
+            <div class="admin-editor" (click)="$event.stopPropagation()">
                 <div class="form-grupo">
                     <label>Nombre</label>
                     <input type="text" [(ngModel)]="nombreEdicion">
@@ -40,26 +45,17 @@
                 <div class="info-content">
                     <h4>{{ prod.nombre }}</h4>
                     <p class="precio">${{ prod.precio | number:'1.0-0' }}</p>
-                    <ul>
-                        @for (item of prod.especificaciones; track $index) {
-                        <li>{{ item }}</li>
-                        }
-                    </ul>
                 </div>
-                <div class="fade-overlay-card"></div>
             </div>
 
-            <div class="acciones-card">
-                <button class="btn-comprar" [routerLink]="['/articulo', prod.id]">
-                    Ver Detalle
-                </button>
-                @if (esAdmin) {
+            @if (esAdmin) {
+            <div class="acciones-card" (click)="$event.stopPropagation()">
                 <div class="acciones-admin-card">
                     <button class="btn-editar-admin" (click)="iniciarEdicion(prod)">Editar</button>
                     <button class="btn-cancelar-admin" (click)="ocultarProducto(prod)">Eliminar</button>
                 </div>
-                }
             </div>
+            }
             }
         </div>
         }

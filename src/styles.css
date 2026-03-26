@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Color Palette - Minimalist Premium E-commerce */
-  --color-bg-primary: #f5f7f9;
-  --color-bg-secondary: #ffffff;
+  /* Color Palette - Kinetic Gallery Reference */
+  --color-bg-primary: #f9fafb; /* Soft gray for page body */
+  --color-bg-secondary: #ffffff; /* Pure white containers */
   --color-text-main: #111111;
-  --color-text-muted: #666666;
-  --color-accent: #00E676; /* Electric Green */
-  --color-accent-hover: #00c853;
-  --color-border: #eaeaea;
+  --color-text-muted: #6b7280;
+  --color-accent: #3b82f6; /* Vibrant Blue */
+  --color-accent-hover: #2563eb;
+  --color-border: #f3f4f6;
   
   /* Shadows and Borders */
-  --shadow-soft: 0 4px 20px rgba(0,0,0,0.04);
-  --shadow-hover: 0 8px 30px rgba(0,0,0,0.08);
+  --shadow-soft: 0 4px 15px rgba(0,0,0,0.03);
+  --shadow-hover: 0 8px 25px rgba(0,0,0,0.06);
   --radius-sm: 8px;
-  --radius-md: 12px;
+  --radius-md: 16px;
   --radius-pill: 50px;
   
   /* Transitions */
@@ -34,9 +34,9 @@ body {
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Espacio para los tabs inferiores / barra inferior */
-  padding-bottom: 90px;
+  padding-bottom: 0px;
   overflow-x: hidden;
+  overflow-y: scroll;
   line-height: 1.5;
 }
 
@@ -64,7 +64,7 @@ button {
 
 .btn-primary {
   background-color: var(--color-accent);
-  color: #111;
+  color: #ffffff;
   font-weight: 600;
   padding: 12px 24px;
   border-radius: var(--radius-md);
@@ -78,7 +78,7 @@ button {
 .btn-primary:hover {
   background-color: var(--color-accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 230, 118, 0.3);
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.3);
 }
 
 /* Base Inputs */
